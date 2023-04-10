@@ -3,8 +3,11 @@ const controller = {
         res.send('Mando los prods')
     },
 
-    product: function(req,res){
-        res.send('Productos')    
+    show: function(req,res){
+       return res.render('product', {
+        usuarioLogueado: false
+       })
+  
     }
 
 }

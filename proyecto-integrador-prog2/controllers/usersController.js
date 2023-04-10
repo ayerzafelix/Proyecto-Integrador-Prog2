@@ -25,9 +25,17 @@ const controller = {
     header: function(req, res) {
         res.send('header', {
 
-        })
+        });
+    },
+
+    product: function(req, res) {
+        res.render('product', {
+
+            
+        });
+    }
 
 }
-}
+
 
 module.exports = controller
