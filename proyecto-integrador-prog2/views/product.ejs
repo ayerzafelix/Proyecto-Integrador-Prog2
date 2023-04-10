@@ -18,54 +18,23 @@
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
-                    <article>
-                        <img src="https://pbs.twimg.com/media/E9mP-IoWYAA7ZzG.jpg" alt="">
-                        <div class="data">
-                            <p class="user">
-                            <strong> <a href="profile.html">Frabigol: </a> </strong>
-                             La mejor hamburguesa de la historia!!! Renueven el stock 🙏</p>
+                    
+            <% for(let i= 0; i < users.length; i++) {%>	
+                <article>
+                    <img src= <%=users[i].imgUrl%> alt="">
+                    <div class="data">
+                        <p class="user">
+                            <strong> <a href="/users/profile"><%= users[i].usuario%>: </a> </strong>
+                            <%= users[i].comentario%></p>
                         </div>
-                    </article>
-                    <article>
-                        <img src="https://pbs.twimg.com/profile_images/1568344268007215109/T_hnUROG_400x400.jpg" alt="">
-                        <div class="data">
-                            <p class="user">
-                                <strong> <a href="profile.html">0800Cj: </a> </strong>
-                                Deliciosa, sin dudas la volveria a comprar!!</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="https://pbs.twimg.com/profile_images/1594709490250797058/E9E87oz5_400x400.jpg" alt="">
-                        <div class="data">
-                            <p class="user">
-                                <strong> <a href="profile.html">AgustinMuzzu: </a> </strong>
-                                Si estas no son las hambiurguesas, las hamburguesas donde estan??
-                                </p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="https://pbs.twimg.com/profile_images/1584354757631774721/wTzD8s4j_400x400.jpg" alt="">
-                        <div class="data">
-                            <p class="user">
-                                <strong> <a href="profile.html">Valencasla_: </a> </strong>
-                                Me encantó!!!</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="https://pbs.twimg.com/profile_images/1512862236397785108/G61xch4A_400x400.jpg" alt="">
-                        <div class="data">
-                            <p class="user">
-                                <strong> <a href="profile.html">Messismo: </a> </strong>
-                                Muy rica, recomendadisima 👍</p>
-                        </div>
-                    </article>
-
+                </article>
+            <% } %> 
+                    
                 </section>
                 <form class="form" action="" method="POST">
                     <input class="form-input" type="text" value="" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                 </form>
-                <hr>
             </div>
         </div>
     </div>

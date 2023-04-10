@@ -107,7 +107,7 @@ const data = {
         {
             
             usuario: '0800Cj',
-            foto: '/images/users/0800.jpg', 
+            imgUrl: '/images/users/0800.jpg', 
             comentario: 'Deliciosa, sin dudas la volveria a comprar!!',
             email: '0800cj@gmail.com',
             comments: [

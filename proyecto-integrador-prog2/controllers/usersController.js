@@ -1,23 +1,31 @@
+const data = require('../data/data')
+
 const controller = {
     login: function(req, res) {
         res.render('login', {
-            usuarioLogueado: false
+            usuarioLogueado: false,
+
         });
     },
     register:  function(req, res) {
         res.render('register', {
-            usuarioLogueado: false
-        });
-    },
-    profile:  function(req, res) {
-        res.render('profile', {
-            usuarioLogueado: true,
+            usuarioLogueado: false,
+
 
         });
+    },
+    profile: function(req, res){
+        res.render('profile', {
+            productos: data.productos,
+            users: data.users,
+            usuarioLogueado: true,
+            
+        })
     },
     edit: function(req, res) {
         res.render('edit-profile', {
             usuarioLogueado: true,
+            users: data.users,
 
         })
     }, 
@@ -30,6 +38,7 @@ const controller = {
 
     product: function(req, res) {
         res.render('product', {
+            users: data.users,
 
             
         });
