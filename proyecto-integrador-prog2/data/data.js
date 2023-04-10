@@ -102,10 +102,79 @@ const data = {
         },
 
     ],
-    users: {
 
-    },
+    users: [
+        {
+            
+            usuario: '0800Cj',
+            foto: '/images/users/0800.jpg', 
+            comentario: 'Deliciosa, sin dudas la volveria a comprar!!',
+            email: '0800cj@gmail.com',
+            comments: [
+                {
+                    comentarios: 12
+                }
+            ] 
 
-}
+
+        },
+        {
+            
+            usuario: 'Frabigol',
+            imgUrl: '/images/users/frabigol.jpg', 
+            comentario: 'La mejor hamburguesa de la historia!!! Renueven el stock 🙏',
+            email: 'frabigol@gmail.com',
+            comments: [
+                {
+                    comentarios: 12
+                }
+            ] 
+
+
+        },
+        {
+            
+            usuario: 'Agustin Muzzu',
+            imgUrl: '/images/users/muzzu.jpg', 
+            comentario: 'Si estas no son las hambiurguesas, las hamburguesas donde estan??',
+            email: 'muzzuagus@gmail.com',
+            comments: [
+                {
+                    comentarios: 12
+                }
+            ] 
+
+
+        },
+        {
+            
+            usuario: 'ValencasIa',
+            imgUrl: '/images/users/valen.jpg', 
+            comentario: 'Me encantó!!!',
+            email: 'valencasla@gmail.com',
+            comments: [
+                {
+                    comentarios: 12
+                }
+            ] 
+
+
+        },
+        {
+            
+            usuario: 'Messismo',
+            imgUrl: '/images/users/messismo.jpg', 
+            comentario: 'Muy rica, recomendadisima 👍',
+            email: 'messismo@gmail.com',
+            comments: [
+                {
+                    comentarios: 12
+                }
+            ] 
+
+
+        },
+
+    ]}
 
 module.exports = data
