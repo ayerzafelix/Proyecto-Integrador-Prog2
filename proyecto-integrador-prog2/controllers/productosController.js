@@ -8,7 +8,15 @@ const controller = {
         usuarioLogueado: false
        })
   
-    }
+    },
+
+    agregar: function(req,res){
+        return res.render('product-add', {
+         usuarioLogueado: false
+        })
+   
+     }
+ 
 
 }
 

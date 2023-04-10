@@ -7,9 +7,7 @@ router.get('/', controller.index);
 
 router.get('/detail', controller.show)
 
-router.get('/agregar', controller.show)
+router.get('/agregar', controller.agregar)
 
 
 module.exports = router;
-
-

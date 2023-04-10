@@ -15,4 +15,3 @@ router.get('/edit-profile', controller.edit)
 module.exports = router;
 
 
-

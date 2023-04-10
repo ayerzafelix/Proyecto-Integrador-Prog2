@@ -1,0 +1,45 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+
+
+<!DOCTYPE html>
+<html lang="es">
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ingresar</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<section>
+				<form action="/register" method="get">
+
+					<div>
+						<label for="">Imagen:</label>
+						<input type="file" name="imagen" value="">
+					</div>
+
+					<div>
+						<label for="">Nombre del producto:</label>
+						<input type="text" name="nombreproducto" value="">
+					</div>
+
+					<div>
+						<label for="">Descripcion:</label>
+						<input type="text" name="descripcion" value="">
+					</div>
+
+					<div>
+						<label for="">Fecha carga:</label>
+						<input type="date" name="edad" value="">
+					</div>
+
+
+				</form>
+			</section>
+
+</body>
+
+</html>
+
+<%- include('./partials/footer') %>
