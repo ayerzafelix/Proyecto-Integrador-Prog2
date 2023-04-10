@@ -4,7 +4,6 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -68,7 +67,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-image: url("/images/products/BANNER-FONDO.png");
 }
 
 .main-header_home-link,
@@ -154,9 +153,9 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/products/WALDOS.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   height: 100px;
 }
