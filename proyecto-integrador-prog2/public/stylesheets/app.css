@@ -67,7 +67,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-image: url("/images/products/BANNER-FONDO.png");
+  background-color: #b0aa9e;
 }
 
 .main-header_home-link,
@@ -155,7 +155,7 @@ hr {
 .banner {
   background-image: url(/images/products/WALDOS.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size:cover;
   background-position: center center;
   height: 100px;
 }
