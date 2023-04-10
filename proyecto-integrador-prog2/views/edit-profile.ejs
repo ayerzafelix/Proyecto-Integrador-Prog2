@@ -13,12 +13,46 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de edición de datos del perfil de usuario. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos deñ usuario<br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+			<section>
+				<form action="/register" method="get">
+
+					<div>
+						<label for="">Mail:</label>
+						<input type="email" name="mail" value="">
+					</div>
+
+					<div>
+						<label for="">Usuario:</label>
+						<input type="text" name="user" value="">
+					</div>
+
+					<div>
+						<label for="">Contrasena:</label>
+						<input type="password" name="contrasena" value="">
+					</div>
+
+					<div>
+						<label for="">Fecha nacimiento:</label>
+						<input type="date" name="edad" value="">
+					</div>
+
+					<div>
+						<label for="">DNI:</label>
+						<input type="number" name="dni" value="">
+					</div>
+
+					<div>
+						<label for="">Foto de perfil:</label>
+						<input type="file" name="foto" value="">
+					</div>
+
+					<div>
+						<button type="submit">Enviar</button>
+					</div>
+
+
+				</form>
+			</section>
 </body>
 
 </html>
