@@ -12,6 +12,24 @@
   --base-font-family: 'Roboto', sans-serif
 }
 
+p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a {
+  font-weight: 700;
+}
 
 /*====== Basics ======*/
 * {
@@ -170,7 +188,6 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
 }
 
 .product-box {

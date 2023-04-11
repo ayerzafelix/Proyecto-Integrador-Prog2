@@ -134,10 +134,10 @@ const data = {
         },
         {
             
-            usuario: 'Agustin Muzzu',
-            imgUrl: '/images/users/muzzu.jpg', 
+            usuario: 'Osvaldo',
+            imgUrl: '/images/users/osvaldo.jpg', 
             comentario: 'Si estas no son las hambiurguesas, las hamburguesas donde estan??',
-            email: 'muzzuagus@gmail.com',
+            email: 'osvaldo@gmail.com',
             comments: [
                 {
                     comentarios: 12
@@ -166,6 +166,19 @@ const data = {
             imgUrl: '/images/users/messismo.jpg', 
             comentario: 'Muy rica, recomendadisima 👍',
             email: 'messismo@gmail.com',
+            comments: [
+                {
+                    comentarios: 12
+                }
+            ] 
+
+
+        },
+        {
+            
+            usuario: 'Ruben Dario Insua',
+            imgUrl: '/images/users/insua.jpg', 
+            email: 'rubeninsua@gmail.com',
             comments: [
                 {
                     comentarios: 12
