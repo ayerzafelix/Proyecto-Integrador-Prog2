@@ -27,6 +27,7 @@ const controller = {
             usuarioLogueado: true,
             users: data.users,
 
+
         })
     }, 
 
@@ -40,7 +41,6 @@ const controller = {
         res.render('product', {
             users: data.users,
 
-            
         });
     }
 

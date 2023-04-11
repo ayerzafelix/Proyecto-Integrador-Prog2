@@ -105,88 +105,52 @@ const data = {
 
     users: [
         {
-            
+            usuario: 'Ruben Dario Insua',
+            imgUrl: '/images/users/insua.jpg', 
+            email: 'rubeninsua@gmail.com',
+
+
+
+        }
+
+    ],
+
+    comentario: [
+        {
             usuario: '0800Cj',
             imgUrl: '/images/users/0800.jpg', 
-            comentario: 'Deliciosa, sin dudas la volveria a comprar!!',
-            email: '0800cj@gmail.com',
-            comments: [
-                {
-                    comentarios: 12
-                }
-            ] 
-
+            comentarios: 'Deliciosa, sin dudas la volveria a comprar!!',
 
         },
         {
             
             usuario: 'Frabigol',
             imgUrl: '/images/users/frabigol.jpg', 
-            comentario: 'La mejor hamburguesa de la historia!!! Renueven el stock 🙏',
-            email: 'frabigol@gmail.com',
-            comments: [
-                {
-                    comentarios: 12
-                }
-            ] 
-
+            comentarios: 'La mejor hamburguesa de la historia!!! Renueven el stock 🙏',
 
         },
         {
             
             usuario: 'Osvaldo',
             imgUrl: '/images/users/osvaldo.jpg', 
-            comentario: 'Si estas no son las hambiurguesas, las hamburguesas donde estan??',
-            email: 'osvaldo@gmail.com',
-            comments: [
-                {
-                    comentarios: 12
-                }
-            ] 
-
+            comentarios: 'Si estas no son las hambiurguesas, las hamburguesas donde estan??',
 
         },
         {
             
             usuario: 'ValencasIa',
             imgUrl: '/images/users/valen.jpg', 
-            comentario: 'Me encantó!!!',
-            email: 'valencasla@gmail.com',
-            comments: [
-                {
-                    comentarios: 12
-                }
-            ] 
-
+            comentarios: 'Me encantó!!!',
 
         },
         {
             
             usuario: 'Messismo',
             imgUrl: '/images/users/messismo.jpg', 
-            comentario: 'Muy rica, recomendadisima 👍',
-            email: 'messismo@gmail.com',
-            comments: [
-                {
-                    comentarios: 12
-                }
-            ] 
-
+            comentarios: 'Muy rica, recomendadisima 👍',
 
         },
-        {
-            
-            usuario: 'Ruben Dario Insua',
-            imgUrl: '/images/users/insua.jpg', 
-            email: 'rubeninsua@gmail.com',
-            comments: [
-                {
-                    comentarios: 12
-                }
-            ] 
 
-
-        },
 
     ]}
 

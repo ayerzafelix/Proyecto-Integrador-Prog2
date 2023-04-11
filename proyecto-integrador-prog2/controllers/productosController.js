@@ -8,7 +8,7 @@ const controller = {
     show: function(req,res){
        return res.render('product', {
         usuarioLogueado: false,
-        users: data.users,
+        comentario: data.comentario,
        })
   
     },

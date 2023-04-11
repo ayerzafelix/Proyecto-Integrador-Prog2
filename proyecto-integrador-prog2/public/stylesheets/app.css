@@ -46,7 +46,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: #ECEBEB;
 }
 
 ul,
@@ -275,7 +275,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: #cfa1a1;
   padding: 20px 0;
   margin-top: 80px;
 }

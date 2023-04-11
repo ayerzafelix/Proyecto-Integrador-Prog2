@@ -18,14 +18,18 @@
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
+
+
                     
-            <% for(let i = 0; i <= 4; i++) {%>	
+
+                    
+                <% for( let i = 0; i < comentario.length; i++ ) { %>	
                 <article>
-                    <img src= <%=users[i].imgUrl%> alt="">
+                    <img src= <%=comentario[i].imgUrl%> alt="">
                     <div class="data">
                         <p class="user">
-                            <strong> <a href="/users/profile"><%= users[i].usuario%>: </a> </strong>
-                            <%= users[i].comentario%></p>
+                            <strong> <a href="/users/profile"><%= comentario[i].usuario%>: </a> </strong>
+                            <%= comentario[i].comentarios%></p>
                         </div>
                 </article>
             <% } %> 
