@@ -6,7 +6,7 @@ const controller = {
             productos: data.productos,
             users: data.users,
             usuarioLogueado: true,
-            
+            comentario: data.comentario
         })
     }
     
