@@ -9,29 +9,27 @@ module.exports = function(sequelize, dataType){
 
     // Mapeo exacto de cada una de las columnas
     let cols = {
-            id:{
+            producto_id:{
                 autoIncrement: true,
                 primaryKey: true,
                 type: dataTypes.INTEGER,
             },
-            title:{
-                type: dataTypes.STRING,
+            usuario_id:{
+                type: dataTypes.INTEGRTER,
             },
-            rating:{
-                type: dataTypes.DECIMAL,
+            producto:{
+                type: dataTypes.STRING(80),
             },
-            awards:{
-                type: dataTypes.INTEGER,
+            descripcion:{
+                type: dataTypes.TEXT(medium),
             },
-            release_date:{
+            createdAt:{
                 type: dataTypes.DATE,
             },
-            length:{
-                type: dataTypes.INTEGER,
+            updatedAt:{
+                type: dataTypes.DATE,
             },
-            genre_id:{
-                type: dataTypes.INTEGER,
-            }
+            
         }
 
 
