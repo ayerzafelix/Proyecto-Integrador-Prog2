@@ -1,4 +1,5 @@
 const data = require('../data/data')
+const usuarios = data.Usuario; //el alias de usuario.js
 
 const controller = {
     login: function(req, res) {

@@ -6,18 +6,16 @@ module.exports = function(sequelize, dataType){
 
     // Crear 3 variables 
 
-    let alias = "Product" ; // Un apodo para requerirlo en los controllers 
+    let alias = "Usuario" ; // Un apodo para requerirlo en los controllers 
 
 
     // Mapeo exacto de cada una de las columnas
     let cols = {
 
-
-
             usuario_id:{autoIncrement: true,
                 primaryKey: true,
-                type: dataTypes.INTEGER,},
-            
+                type: dataTypes.INTEGER,
+            },
             nombre_usuario:{
                 type: dataTypes.STRING(30),
             },
