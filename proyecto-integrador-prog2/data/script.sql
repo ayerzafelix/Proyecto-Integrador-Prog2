@@ -2,9 +2,9 @@ create schema base_de_datos;
 
 use base_de_datos;
 
-CREATE TABLE info_usuario (
-	usuario_id  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nombre_usuario VARCHAR(30) NOT NULL,
+CREATE TABLE infoUsuario (
+	usuarioId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombreUsuario VARCHAR(30) NOT NULL,
 	mail VARCHAR(60) NOT NULL UNIQUE,
     pass VARCHAR(150) NOT NULL,
     fotoPerfil VARCHAR(100) NOT NULL,
@@ -14,25 +14,25 @@ CREATE TABLE info_usuario (
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE info_productos (
-	producto_id  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    usuario_id INT UNSIGNED,
+CREATE TABLE infoProductos (
+	productoId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    usuarioId INT UNSIGNED,
 	producto VARCHAR(80) NOT NULL,
     descripcion TEXT,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE info_comentarios (
-	comentario_id  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    posteo_id INT UNSIGNED,
-    usuariocomentario_id INT UNSIGNED,
+CREATE TABLE infoComentarios (
+	comentarioId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    posteoId INT UNSIGNED,
+    usuariocomentarioId INT UNSIGNED,
 	comentario TEXT NOT NULL,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-insert into info_usuario (nombre_usuario, mail, pass, fotoPerfil, fecha, DNI) values
+insert into infoUsuario (nombreUsuario, mail, pass, fotoPerfil, fecha, DNI) values
 ('Ruben Dario Insua', 'rubeninsua@gmail.com', 'pass000', '/images/users/insua.jpg', '2004-06-08', 45766322 ),
 ('0800Cj', '0800cj@gmail.com', 'pass001', '/images/users/0800.jpg', '2003-07-02', 45766000 ),
 ('Frabigol', 'frabigol@gmail.com', 'pass002', '/images/users/frabigol.jpg', '2002-08-09', 42233576 ),
@@ -40,7 +40,7 @@ insert into info_usuario (nombre_usuario, mail, pass, fotoPerfil, fecha, DNI) va
 ('ValencasIa', 'valencasla@gmail.com', 'pass004', '/images/users/valen.jpg', '2000-11-11', 32233111 )
 ;
 
-insert into info_productos (usuario_id, producto, descripcion) values
+insert into infoProductos (usuarioId, producto, descripcion) values
 (1, 'CBO', 'Deliciosa hamburguesa con tus tres ingredientes favoritos: Chicken, Bacon, Onion. Delicioso pollo, crujiente bacon y el sabor sorprendente de nuestro crispy onion, con lechuga, queso cheddar, una salsa original y un pan único.'),
 (2, 'Big Mac', 'Quizás sean las dos hamburguesas de carne 100% vacuna con esa salsa especial y queso derretido, el toque de cebolla y la frescura de la lechuga o el crocante del pepino, lo que la hace la hamburguesa más famosa del mundo. Un sabor único.'),
 (3, 'Gran Tasty Doble', 'Inigualable pan con semillas de sésamo, dos medallones de carne 100% vacuna, dos fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty, un exclusivo sabor McDonald’s.'),
@@ -53,7 +53,7 @@ insert into info_productos (usuario_id, producto, descripcion) values
 (1, ' Wrap', 'Un crujiente pollo crispy, acompañado tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.')
 ;
 
-insert into info_comentarios (posteo_id, usuariocomentario_id, comentario) values
+insert into infoComentarios (posteoId, usuariocomentarioId, comentario) values
 (1,1, 'Riquisima'),
 (1,2, 'Muy jugosa'),
 (1,3, 'Es fea. No supero expectativas'),

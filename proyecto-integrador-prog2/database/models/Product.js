@@ -9,12 +9,12 @@ module.exports = function(sequelize, dataTypes){
 
     // Mapeo exacto de cada una de las columnas
     let cols = {
-            producto_id:{
+            productoId:{
                 autoIncrement: true,
                 primaryKey: true,
                 type: dataTypes.INTEGER,
             },
-            usuario_id:{
+            usuarioId:{
                 type: dataTypes.INTEGER,
             },
             producto:{
@@ -35,8 +35,8 @@ module.exports = function(sequelize, dataTypes){
 
         // Obj literal para configurar la tabla
     let config =  {
-        tableName: 'info_productos', // Nombre de la tabla 
-        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        tableName: 'infoProductos', // Nombre de la tabla 
+        timestamps: false, //Si la tabla no tiene los campos createdAt y updatedAt
         underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     
@@ -49,13 +49,13 @@ module.exports = function(sequelize, dataTypes){
    
             Movie.belongsTo(models.Genre , {
                 as: "genre",
-                foreingKey : "genre_id"
+                foreingKey : "genreId"
             }),
             Movie.belongsToMany( models.Comentario , {
                 as: "Comments",
                 through: "tabla pivot HAY Q HACERLA",
-                foreingKey: "producto_id",
-                otherKey: "comentario_id",
+                foreingKey: "productoId",
+                otherKey: "comentarioId",
                 timestamps:  false
             } )
        }; */

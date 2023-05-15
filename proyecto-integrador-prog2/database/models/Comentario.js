@@ -9,15 +9,15 @@ module.exports = function(sequelize, dataTypes){
 
     // Mapeo exacto de cada una de las columnas
     let cols = {
-            comentario_id:{
+            comentarioId:{
                 autoIncrement: true,
                 primaryKey: true,
                 type: dataTypes.INTEGER,
             },
-            posteo_id:{
+            posteoId:{
                 type: dataTypes.INTEGER,
             },
-            usuariocomentario_id:{
+            usuariocomentarioId:{
                 type: dataTypes.INTEGER,
             },
             comentario:{
@@ -35,8 +35,8 @@ module.exports = function(sequelize, dataTypes){
 
         // Obj literal para configurar la tabla
     let config =  {
-        tableName: 'info_comentarios', // Nombre de la tabla 
-        timestamps: false, //Si la tabla no tiene los campos created_at y updated_at
+        tableName: 'infoComentarios', // Nombre de la tabla 
+        timestamps: false, //Si la tabla no tiene los campos createdAt y updatedAt
         underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     
@@ -48,7 +48,7 @@ module.exports = function(sequelize, dataTypes){
 
         Comments.belongsTo(models.Product , {
             as: "Comments",
-            foreingKey : "producto_id"
+            foreingKey : "productoId"
         })
    };
 */
