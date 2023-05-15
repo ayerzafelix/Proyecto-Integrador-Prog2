@@ -1,6 +1,6 @@
 // Es una función que recibe dos parametros
 
-module.exports = function(sequelize, dataType){
+module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
 
@@ -21,7 +21,7 @@ module.exports = function(sequelize, dataType){
                 type: dataTypes.STRING(80),
             },
             descripcion:{
-                type: dataTypes.TEXT(medium),
+                type: dataTypes.TEXT(),
             },
             createdAt:{
                 type: dataTypes.DATE,
@@ -42,5 +42,26 @@ module.exports = function(sequelize, dataType){
     
     const Products = sequelize.define(alias, cols, config);
 
+
+    // crear relaciones
+
+   /* Products.associate = function(models) {
+   
+            Movie.belongsTo(models.Genre , {
+                as: "genre",
+                foreingKey : "genre_id"
+            }),
+            Movie.belongsToMany( models.Comentario , {
+                as: "Comments",
+                through: "tabla pivot HAY Q HACERLA",
+                foreingKey: "producto_id",
+                otherKey: "comentario_id",
+                timestamps:  false
+            } )
+       }; */
+
+
     return Products;
 };
+
+

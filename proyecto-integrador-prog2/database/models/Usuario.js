@@ -2,7 +2,7 @@
 
 const data = require("../../data/data");
 
-module.exports = function(sequelize, dataType){
+module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
 
@@ -52,6 +52,9 @@ module.exports = function(sequelize, dataType){
     };
     
     const Usuarios = sequelize.define(alias, cols, config);
+
+
+
 
     return Usuarios;
 };

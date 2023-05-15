@@ -1,6 +1,6 @@
 // Es una función que recibe dos parametros
 
-module.exports = function(sequelize, dataType){
+module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
 
@@ -41,6 +41,17 @@ module.exports = function(sequelize, dataType){
     };
     
     const Comments = sequelize.define(alias, cols, config);
+
+    
+   /* Crear relaciones 
+   Comments.associate = function(models) {
+
+        Comments.belongsTo(models.Product , {
+            as: "Comments",
+            foreingKey : "producto_id"
+        })
+   };
+*/
 
     return Comments;
 };
