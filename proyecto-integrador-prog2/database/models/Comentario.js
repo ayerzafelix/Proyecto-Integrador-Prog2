@@ -36,8 +36,8 @@ module.exports = function(sequelize, dataTypes){
         // Obj literal para configurar la tabla
     let config =  {
         tableName: 'infoComentarios', // Nombre de la tabla 
-        timestamps: false, //Si la tabla no tiene los campos createdAt y updatedAt
-        underscored: true, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
+        timestamps: true, //Si la tabla no tiene los campos createdAt y updatedAt
+        underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     
     const Comments = sequelize.define(alias, cols, config);
