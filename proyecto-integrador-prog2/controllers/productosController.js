@@ -20,7 +20,22 @@ const controller = {
          users: data.users,
         })
    
-     }
+     },
+
+    showForm: (req,res) => {
+        return res.render('register ')
+    },
+
+    store: (req,res) => {
+        let info = req.body;
+        products.create(info)
+        .then((result) => {
+            return res.redirect('/productos/') 
+        }).catch((error) => {
+            console.log(error)
+        });
+        
+    }
  
 
 }
