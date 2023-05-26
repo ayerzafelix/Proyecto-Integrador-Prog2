@@ -5,12 +5,18 @@ const controller = require('../controllers/productosController')
 
 router.get('/', controller.index);
 
-router.get('/detail', controller.show)
+router.get('/all'. controller.findAll);
 
-router.get('/agregar', controller.agregar)
+router.get('/id/:id', controller.show)
 
-router.get('/register', controller.showForm)
+// router.get('/detail', controller.show);
 
-router.post('/register', controller.store)
+router.get('/busqueda', controller.resultado )
+
+router.get('/agregar', controller.agregar);
+
+router.get('/register', controller.showForm);
+
+router.post('/register', controller.store);
 
 module.exports = router;

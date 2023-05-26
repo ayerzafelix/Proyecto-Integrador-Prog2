@@ -12,8 +12,6 @@ router.get('/profile', controller.profile)
 
 router.get('/edit-profile', controller.edit)
 
-
-
 router.get('/register', );
 
 module.exports = router;
