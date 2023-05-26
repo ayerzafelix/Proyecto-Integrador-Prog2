@@ -41,17 +41,17 @@ insert into infoUsuario (nombreUsuario, mail, pass, fotoPerfil, fecha, DNI) valu
 ('ValencasIa', 'valencasla@gmail.com', 'pass004', '/images/users/valen.jpg', '2000-11-11', 32233111 )
 ;
 
-insert into infoProductos (usuarioId, producto, descripcion) values
-(1, 'CBO', 'Deliciosa hamburguesa con tus tres ingredientes favoritos: Chicken, Bacon, Onion. Delicioso pollo, crujiente bacon y el sabor sorprendente de nuestro crispy onion, con lechuga, queso cheddar, una salsa original y un pan único.'),
-(2, 'Big Mac', 'Quizás sean las dos hamburguesas de carne 100% vacuna con esa salsa especial y queso derretido, el toque de cebolla y la frescura de la lechuga o el crocante del pepino, lo que la hace la hamburguesa más famosa del mundo. Un sabor único.'),
-(3, 'Gran Tasty Doble', 'Inigualable pan con semillas de sésamo, dos medallones de carne 100% vacuna, dos fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty, un exclusivo sabor McDonald’s.'),
-(4, 'Hamburguesa Con Queso', 'Carne 100% vacuna, queso derretido y mostaza, kétchup y cebolla triturada, es algo que nunca puede fallar. Un clásico que nunca pasa de moda.'),
-(5, 'Club House', 'Incluye un nuevo pan artesanal tipo brioche, bacon rústico, cebolla grillada, queso cheddar suave, rodajas de tomate, lechuga y una salsa especial'),
-(5, 'Nuggets', 'Hechos de carne blanca de pollo sin colorantes, sabores ni conservantes artificiales.'),
-(4, 'Mc Nifica', 'En un mundo donde todos buscan lo nuevo todo el tiempo, la McNífica viene a rectificar lo bueno de ser clásico. Carne, queso cheddar, tomate, lechuga y cebolla, acompañados de kétchup, mostaza y mayonesa.'),
-(3, 'Mc Wrap', 'Un crujiente pollo crispy, acompañado con cebolla, tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.'),
-(2, 'Hamburguesa Con Cheddar', 'Carne 100% vacuna, queso derretido, kétchup y cebolla triturada, es algo que nunca puede fallar. Un clásico que nunca pasa de moda.'),
-(1, ' Wrap', 'Un crujiente pollo crispy, acompañado tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.')
+insert into infoProductos (usuarioId, fotoProducto, producto, descripcion) values
+(1, 'CBO', "Cbo.jpg", 'Deliciosa hamburguesa con tus tres ingredientes favoritos: Chicken, Bacon, Onion. Delicioso pollo, crujiente bacon y el sabor sorprendente de nuestro crispy onion, con lechuga, queso cheddar, una salsa original y un pan único.'),
+(2, 'Big Mac', "bigMac.jpg", 'Quizás sean las dos hamburguesas de carne 100% vacuna con esa salsa especial y queso derretido, el toque de cebolla y la frescura de la lechuga o el crocante del pepino, lo que la hace la hamburguesa más famosa del mundo. Un sabor único.'),
+(3, 'Gran Tasty Doble', "grandTastyDoble.jpg", 'Inigualable pan con semillas de sésamo, dos medallones de carne 100% vacuna, dos fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty, un exclusivo sabor McDonald’s.'),
+(4, 'Hamburguesa Con Queso', "hamburguesaConQueso.jpg", 'Carne 100% vacuna, queso derretido y mostaza, kétchup y cebolla triturada, es algo que nunca puede fallar. Un clásico que nunca pasa de moda.'),
+(5, 'Club House', "clubHouse.jpg", 'Incluye un nuevo pan artesanal tipo brioche, bacon rústico, cebolla grillada, queso cheddar suave, rodajas de tomate, lechuga y una salsa especial'),
+(5, 'Nuggets', "nuggets.jpg", 'Hechos de carne blanca de pollo sin colorantes, sabores ni conservantes artificiales.'),
+(4, 'Mc Nifica', "mcnifica.jpg", 'En un mundo donde todos buscan lo nuevo todo el tiempo, la McNífica viene a rectificar lo bueno de ser clásico. Carne, queso cheddar, tomate, lechuga y cebolla, acompañados de kétchup, mostaza y mayonesa.'),
+(3, 'Mc Wrap', "Mcwrapp.jpg", 'Un crujiente pollo crispy, acompañado con cebolla, tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.'),
+(2, 'Hamburguesa Con Cheddar', "", 'Carne 100% vacuna, queso derretido, kétchup y cebolla triturada, es algo que nunca puede fallar. Un clásico que nunca pasa de moda.'),
+(1, 'Wrap', "", 'Un crujiente pollo crispy, acompañado tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.')
 ;
 
 insert into infoComentarios (posteoId, usuariocomentarioId, comentario) values
