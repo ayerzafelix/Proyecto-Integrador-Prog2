@@ -1,6 +1,6 @@
 const data = require('../database/models')
 const products = data.Product; // Alias del modelo
-let op = db.Sequelize.Op;
+let op = data.Sequelize.Op;
 
 const controller = {
     index: function(req,res){
