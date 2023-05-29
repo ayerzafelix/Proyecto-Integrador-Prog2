@@ -60,8 +60,6 @@ const controller = {
         });
     },
 
-
-
     agregar: function(req,res){
         return res.render('product-add', {
          usuarioLogueado: true,
