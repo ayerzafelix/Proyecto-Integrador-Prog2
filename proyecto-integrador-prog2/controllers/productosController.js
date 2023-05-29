@@ -33,7 +33,7 @@ const controller = {
         products.findByPk(id)
         .then(function(result){
             return res.render('product', {
-                producto: result
+                product: result
             })
 
         })

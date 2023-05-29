@@ -50,8 +50,8 @@ insert into infoProductos (usuarioId, producto, fotoProducto, descripcion) value
 (5, 'Nuggets', "/images/products/nuggets.jpg", 'Hechos de carne blanca de pollo sin colorantes, sabores ni conservantes artificiales.'),
 (4, 'Mc Nifica', "/images/products/mcnifica.jpg", 'En un mundo donde todos buscan lo nuevo todo el tiempo, la McNífica viene a rectificar lo bueno de ser clásico. Carne, queso cheddar, tomate, lechuga y cebolla, acompañados de kétchup, mostaza y mayonesa.'),
 (3, 'Mc Wrap', "/images/products/Mcwrap.jpg", 'Un crujiente pollo crispy, acompañado con cebolla, tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.'),
-(2, 'Hamburguesa Con Cheddar', "/images/products/", 'Carne 100% vacuna, queso derretido, kétchup y cebolla triturada, es algo que nunca puede fallar. Un clásico que nunca pasa de moda.'),
-(1, 'Wrap', "/images/products/", 'Un crujiente pollo crispy, acompañado tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.')
+(2, 'Hamburguesa Con Cheddar', "/images/products/hamburguesaConCheddar.jpg", 'Carne 100% vacuna, queso derretido, kétchup y cebolla triturada, es algo que nunca puede fallar. Un clásico que nunca pasa de moda.'),
+(1, 'Wrap', "/images/products/mcWrapVerde.jpg", 'Un crujiente pollo crispy, acompañado tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.')
 ;
 
 insert into infoComentarios (posteoId, usuariocomentarioId, comentario) values
