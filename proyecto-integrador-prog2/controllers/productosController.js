@@ -3,22 +3,22 @@ const products = data.Product; // Alias del modelo
 let op = data.Sequelize.Op;
 
 const controller = {
-    index: function(req,res){
-        res.send('Mando los prods')
-    },
+    // index: function(req,res){
+    //     res.send('Mando los prods')
+    // },
 
-    findAll: (req, res) => {
+    // findAll: (req, res) => {
 
-        products.findAll({
-            order:[['createdAt', 'DESC']],
-            limit: 5
-        })
-        .then(function (result) {
-            return res.render('product', { listaProductos: result });   
-        }).catch(function (err){
-            console.log(err);
-        });
-    },
+    //     products.findAll({
+    //         order:[['createdAt', 'DESC']],
+    //         limit: 5
+    //     })
+    //     .then(function (result) {
+    //         return res.render('product', { listaProductos: result });   
+    //     }).catch(function (err){
+    //         console.log(err);
+    //     });
+    // },
 
     // show anterior show: function(req,res){
       // return res.render('product', {
@@ -33,7 +33,7 @@ const controller = {
         products.findByPk(id)
         .then(function(result){
             return res.render('product', {
-                product: result
+                producto: result
             })
 
         })

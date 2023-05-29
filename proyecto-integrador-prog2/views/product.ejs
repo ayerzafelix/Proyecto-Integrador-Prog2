@@ -5,7 +5,7 @@
 
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
-        <h2 class="products-title">Chicken Bacon Onion</h2> 
+        <h2 class="products-title"><%= producto.producto %></h2> 
         <p class="product-detail-description">
             <a href="/productos/agregar">Editar</a>
         </p>
@@ -14,7 +14,7 @@
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src="/images/products/cbo.jpg" alt="" class="product-detail-img">
-                <p class="product-detail-description">Deliciosa hamburguesa con tus tres ingredientes favoritos: Chicken, Bacon, Onion. Delicioso pollo, crujiente bacon y el sabor sorprendente de nuestro crispy onion, con lechuga, queso cheddar, una salsa original y un pan único.</p>
+                <p class="product-detail-description"><%= producto.descripcion %></p>
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
