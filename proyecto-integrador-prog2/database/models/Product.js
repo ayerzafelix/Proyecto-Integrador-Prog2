@@ -20,6 +20,9 @@ module.exports = function(sequelize, dataTypes){
             producto:{
                 type: dataTypes.STRING(80),
             },
+            fotoProducto:{
+                type: dataTypes.STRING(),
+            },
             descripcion:{
                 type: dataTypes.TEXT(),
             },
