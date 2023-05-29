@@ -1,5 +1,6 @@
 const data = require('../database/models')
 const products = data.Product; // Alias del modelo
+const comments = data.Comentario
 let op = data.Sequelize.Op;
 
 const controller = {
@@ -30,10 +31,23 @@ const controller = {
 
     show: (req,res) => {
         let id = req.params.id;
+        let comentarios
+        comments.findAll({
+            where: [{ posteoId: id}],
+            //include: [{association: "users"}]
+        }).then((result) => {
+            console.log(result)
+            comentarios = result
+        })
+        .catch((err) => {
+            console.log(err)
+        })
         products.findByPk(id)
         .then(function(result){
             return res.render('product', {
-                product: result
+                producto: result,
+                usuarioLogueado: true, // esto se sustituye con el locals
+                comentarios: comentarios  //[1,2,3,4,5,5] // El array de comentarios traidos de la base de datos
             })
 
         })
