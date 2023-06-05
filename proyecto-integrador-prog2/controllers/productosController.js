@@ -34,7 +34,7 @@ const controller = {
 
         let rel = {
             include: [
-                {association: "pedro"}
+                {association: "usuario"}
             ]
         }
 
@@ -44,9 +44,9 @@ const controller = {
 
 
             return res.render('product', {
-                producto: result,
+                producto: data.productos,
                 usuarioLogueado: true, // esto se sustituye con el locals
-                comentarios: comentarios  //[1,2,3,4,5,5] // El array de comentarios traidos de la base de datos
+                comentarios: data.comentario  //[1,2,3,4,5,5] // El array de comentarios traidos de la base de datos
             })
 
         })

@@ -7,7 +7,7 @@ const controller = require('../controllers/productosController')
 
 // router.get('/all', controller.findAll);
 
-//router.get('/id/:id', controller.show)
+router.get('/id/:id', controller.show)
 
 router.get('/detail/:id', controller.show);
 
