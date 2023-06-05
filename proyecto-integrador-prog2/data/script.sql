@@ -4,7 +4,7 @@ use base_de_datos;
 
 CREATE TABLE infoUsuario (
 
-	usuarioId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	id  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombreUsuario VARCHAR(30) NOT NULL,
 	mail VARCHAR(60) NOT NULL UNIQUE,
     pass VARCHAR(150) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE infoUsuario (
 );
 
 CREATE TABLE infoProductos (
-	productoId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	id  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     usuarioId INT UNSIGNED,
 	producto VARCHAR(80) NOT NULL,
     fotoProducto VARCHAR (200),
@@ -24,20 +24,19 @@ CREATE TABLE infoProductos (
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (usuarioId) REFERENCES infoUsuario(usuarioId)
+    FOREIGN KEY (usuarioId) REFERENCES infoUsuario(id)
 );
 
 CREATE TABLE infoComentarios (
-	comentarioId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    posteoId INT UNSIGNED,
-    usuariocomentarioId INT UNSIGNED,
+	id  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    productoId INT UNSIGNED,
+    usuarioId INT UNSIGNED,
 	comentario TEXT NOT NULL,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-
-    FOREIGN KEY (usuariocomentarioId) REFERENCES infoUsuario(usuarioId),
-    FOREIGN KEY (usuariocomentarioId) REFERENCES infoProductos(usuarioId)
+    FOREIGN KEY (productoId) REFERENCES infoProductos(id),
+    FOREIGN KEY (usuarioId) REFERENCES infoUsuario(id)
 );
 
 insert into infoUsuario (nombreUsuario, mail, pass, fotoPerfil, fecha, DNI) values
@@ -61,7 +60,7 @@ insert into infoProductos (usuarioId, producto, fotoProducto, descripcion) value
 (1, 'Wrap', "/images/products/mcWrapVerde.jpg", 'Un crujiente pollo crispy, acompañado tomate, lechuga, mostaza y mayonesa.  Y por supuesto, todo envuelto en una masa suave y liviana.')
 ;
 
-insert into infoComentarios (posteoId, usuariocomentarioId, comentario) values
+insert into infoComentarios (productoId, usuarioId, comentario) values
 (1,1, 'Riquisima'),
 (1,2, 'Muy jugosa'),
 (1,3, 'Es fea. No supero expectativas'),

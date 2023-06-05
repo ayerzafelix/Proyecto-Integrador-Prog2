@@ -4,12 +4,12 @@ module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
 
-    let alias = "infoProducto" ; // Un apodo para requerirlo en los controllers 
+    let alias = "Product" ; // Un apodo para requerirlo en los controllers 
 
 
     // Mapeo exacto de cada una de las columnas
     let cols = {
-            productoId:{
+            id:{
                 autoIncrement: true,
                 primaryKey: true,
                 type: dataTypes.INTEGER,
@@ -52,11 +52,11 @@ module.exports = function(sequelize, dataTypes){
     Products.associate = function(models) {
    
             Products.belongsTo(models.Usuario, {
-                as: "pedro",
-                foreingKey : "juan"
+                as: "usuario",
+                foreingKey : "usuarioId"
             })
             
-           /* ,
+          /* ,
 
 
             

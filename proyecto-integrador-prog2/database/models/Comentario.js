@@ -9,15 +9,15 @@ module.exports = function(sequelize, dataTypes){
 
     // Mapeo exacto de cada una de las columnas
     let cols = {
-            comentarioId:{
+            id:{
                 autoIncrement: true,
                 primaryKey: true,
                 type: dataTypes.INTEGER,
             },
-            posteoId:{
+            productoId:{
                 type: dataTypes.INTEGER,
             },
-            usuariocomentarioId:{
+            UsuarioId:{
                 type: dataTypes.INTEGER,
             },
             comentario:{

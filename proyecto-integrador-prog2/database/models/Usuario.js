@@ -12,7 +12,7 @@ module.exports = function(sequelize, dataTypes){
     // Mapeo exacto de cada una de las columnas
     let cols = {
 
-            usuarioId:{autoIncrement: true,
+            id:{autoIncrement: true,
                 primaryKey: true,
                 type: dataTypes.INTEGER,
             },
@@ -57,10 +57,10 @@ module.exports = function(sequelize, dataTypes){
 
     Usuario.associate = function (models) {
         Usuario.hasMany(models.Product,{
-        as:"products",
-        foreingKey:"juan"
+        as:"productos",
+        foreingKey:"usuarioId"
       })  
-    };
+    }; 
 
 
 

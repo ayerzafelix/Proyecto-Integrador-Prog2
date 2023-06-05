@@ -42,7 +42,7 @@ const controller = {
         products.findByPk(id, rel)
         .then(function(result){
 
-            return res.send(result)
+
             return res.render('product', {
                 producto: result,
                 usuarioLogueado: true, // esto se sustituye con el locals

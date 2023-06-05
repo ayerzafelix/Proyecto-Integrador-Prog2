@@ -4,9 +4,15 @@ const product = db.Product
 const controller = {
     index: function(req, res){
 
+        let rel = {
+            include: [{
+                association: "usuario"
+            }]
+        }
 
-        product.findAll()
+        product.findAll(rel)
         .then(function(result) {
+
             res.render('index', {
                 productos: result,
                 users: data.users,
