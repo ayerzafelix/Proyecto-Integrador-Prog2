@@ -31,19 +31,18 @@ const controller = {
 
     show: (req,res) => {
         let id = req.params.id;
-        let comentarios
-        comments.findAll({
-            where: [{ posteoId: id}],
-            //include: [{association: "users"}]
-        }).then((result) => {
-            console.log(result)
-            comentarios = result
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-        products.findByPk(id)
+
+        let rel = {
+            include: [
+                {association: "pedro"}
+            ]
+        }
+
+        
+        products.findByPk(id, rel)
         .then(function(result){
+
+            return res.send(result)
             return res.render('product', {
                 producto: result,
                 usuarioLogueado: true, // esto se sustituye con el locals
@@ -53,7 +52,7 @@ const controller = {
         })
         .catch(function(err){
             console.log(err)
-        });
+        });     
   
     },
 

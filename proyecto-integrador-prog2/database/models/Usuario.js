@@ -51,10 +51,18 @@ module.exports = function(sequelize, dataTypes){
         underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     
-    const Usuarios = sequelize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
+
+//Relacion
+
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Product,{
+        as:"products",
+        foreingKey:"juan"
+      })  
+    };
 
 
 
-
-    return Usuarios;
+    return Usuario;
 };

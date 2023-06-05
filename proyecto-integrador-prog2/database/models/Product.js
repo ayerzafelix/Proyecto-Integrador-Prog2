@@ -4,7 +4,7 @@ module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
 
-    let alias = "Product" ; // Un apodo para requerirlo en los controllers 
+    let alias = "infoProducto" ; // Un apodo para requerirlo en los controllers 
 
 
     // Mapeo exacto de cada una de las columnas
@@ -31,7 +31,7 @@ module.exports = function(sequelize, dataTypes){
             },
             updatedAt:{
                 type: dataTypes.DATE,
-            },
+            }
             
         }
 
@@ -48,20 +48,24 @@ module.exports = function(sequelize, dataTypes){
 
     // crear relaciones
 
-   /* Products.associate = function(models) {
+
+    Products.associate = function(models) {
    
-            Movie.belongsTo(models.Genre , {
-                as: "genre",
-                foreingKey : "genreId"
-            }),
-            Movie.belongsToMany( models.Comentario , {
+            Products.belongsTo(models.Usuario, {
+                as: "pedro",
+                foreingKey : "juan"
+            })
+            
+           /* ,
+
+
+            
+            Products.belongsToMany( models.Comentario , {
                 as: "Comments",
-                through: "tabla pivot HAY Q HACERLA",
                 foreingKey: "productoId",
-                otherKey: "comentarioId",
-                timestamps:  false
-            } )
-       }; */
+               
+            } )*/
+       };
 
 
     return Products;

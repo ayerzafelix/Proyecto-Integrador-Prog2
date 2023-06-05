@@ -3,6 +3,7 @@ create schema base_de_datos;
 use base_de_datos;
 
 CREATE TABLE infoUsuario (
+
 	usuarioId  INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nombreUsuario VARCHAR(30) NOT NULL,
 	mail VARCHAR(60) NOT NULL UNIQUE,
@@ -21,7 +22,9 @@ CREATE TABLE infoProductos (
     fotoProducto VARCHAR (200),
     descripcion TEXT,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (usuarioId) REFERENCES infoUsuario(usuarioId)
 );
 
 CREATE TABLE infoComentarios (
@@ -30,7 +33,11 @@ CREATE TABLE infoComentarios (
     usuariocomentarioId INT UNSIGNED,
 	comentario TEXT NOT NULL,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+
+    FOREIGN KEY (usuariocomentarioId) REFERENCES infoUsuario(usuarioId),
+    FOREIGN KEY (usuariocomentarioId) REFERENCES infoProductos(usuarioId)
 );
 
 insert into infoUsuario (nombreUsuario, mail, pass, fotoPerfil, fecha, DNI) values
