@@ -1,6 +1,5 @@
 const data = require('../database/models')
 const products = data.Product; // Alias del modelo
-const comments = data.Comentario
 let op = data.Sequelize.Op;
 
 const controller = {
@@ -32,21 +31,20 @@ const controller = {
     show: (req,res) => {
         let id = req.params.id;
 
-        let rel = {
+        /*let rel = {
             include: [
                 {association: "usuario"}
             ]
-        }
+        }*/
 
         
-        products.findByPk(id, rel)
+        products.findByPk(id)
         .then(function(result){
 
 
             return res.render('product', {
-                producto: data.productos,
+                product: result,
                 usuarioLogueado: true, // esto se sustituye con el locals
-                comentarios: data.comentario  //[1,2,3,4,5,5] // El array de comentarios traidos de la base de datos
             })
 
         })

@@ -5,7 +5,7 @@
 
 <div class="container products-wrapper">
     <div class="d-flex align-items-center">
-        <h2 class="products-title"><%= producto.producto %></h2> 
+        <h2 class="products-title"><%= product.producto%></h2> 
         <p class="product-detail-description">
             <a href="/productos/agregar">Editar</a>
         </p>
@@ -13,8 +13,8 @@
     <div class="product-detail">
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
-                <img src="/images/products/cbo.jpg" alt="" class="product-detail-img">
-                <p class="product-detail-description"><%= producto.descripcion %></p>
+                <img src=<%= product.fotoProducto%> alt="" class="product-detail-img">
+                <p class="product-detail-description"><%= product.descripcion %></p>
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
@@ -23,16 +23,16 @@
                     
 
                     
-                <% for( let i = 0; i < comentarios.length; i++ ) { %>	
+               <!-- 	
                 <article>
                     <img src=%> alt="">
                     <div class="data">
                         <p class="user">
-                            <strong> <a href="/users/profile"><%= comentarios[i].usuario%>: </a> </strong>
-                            <%= comentarios[i].comentario%></p>
+                            <strong> <a href="/users/profile">: </a> </strong>
+                            </p>
                         </div>
                 </article>
-            <% } %> 
+             -->
                     
                 </section>
                 <form class="form" action="" method="get">
