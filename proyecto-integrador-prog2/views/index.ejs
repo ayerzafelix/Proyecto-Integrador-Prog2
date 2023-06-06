@@ -48,68 +48,29 @@
 
 
 			<!-- Show the "ultimos" products -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/productos/detail">
-						<figure class="product-box_image">
-							<img src="images/products/mcPollo.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Mc Pollo</h2>
-							<p>El auténtico sabor del pollo lo encontrás en nuestro clásico McPollo. Una hamburguesa que sabe de sensaciones. La textura del pollo hace un gran equipo con la suavidad de la mayonesa y un colchón de lechuga.</p>
-							<p>Comentarios: <%= comentario.length %></p>
-						</article>
-					</a>
-				</section>
-			</div>
+
+			<% for(let i = 8; i < 12; i++) {%>	
+			
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/productos/detail/<%=productos[i].id%>">
+							<figure class="product-box_image">
+								<img src= <%=productos[i].fotoProducto%> alt="Producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= productos[i].nombre%></h2>
+								<p><%= productos[i].descripcion %></p>
+								<p>Comentarios: <%= comentario.length %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+	
+			<% } %>
 
 
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/productos/detail">
-						<figure class="product-box_image">
-							<img src="images/products/cuartoDeLibra.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Cuarto De Libra</h2>
-							<p>La belleza radica en la simpleza de las cosas. Una hamburguesa que no se anda con vueltas. La perfecta combinación entre la mejor carne 100% vacuna y dos quesos que lo rodean, junto con el toque del kétchup, mostaza y la cebolla fresca.</p>
-							<p>Comentarios: <%= comentario.length %></p>
-						</article>
-					</a>
-				</section>
-			</div>
 
-
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/productos/detail">
-						<figure class="product-box_image">
-							<img src="images/products/grandTastyTurboBaconTriple.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Grand Tasty Turbo Bacon Triple</h2>
-							<p>Al tradicional sabor inconfundible de la salsa Tasty ahora lo potenciamos con nuestro espectacular Bacon crujiente y con nuestro característico Bacon Crispy triturado.</p>
-							<p>Comentarios: <%= comentario.length %></p>
-						</article>
-					</a>
-				</section>
-			</div>
-
-
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/productos/detail">
-						<figure class="product-box_image">
-							<img src="images/products/mcflurry.jpg" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2>Mc Flurry</h2>
-							<p>Un helado de vainilla que se banca compartir el protagonismo con trocitos de deliciosas galletitas Oreo y la salsa que elijas. Amalo hasta el final.</p>
-							<p>Comentarios: <%= comentario.length %></p>
-						</article>
-					</a>
-				</section>
-			</div>
+		
 
 
 		</div>
