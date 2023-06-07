@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let session = require('express-session');
+const data = require('./database/models')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -47,7 +48,7 @@ app.use(function(req, res, next) {
   /* si existe la cooki en el navegador && no existe el usuario en la variable session */
   if (req.cookies.userId != undefined && req.session.user == undefined) {
     let idUsuarioEnCookie = req.cookies.userId;
-    db.User.findByPk(idUsuarioEnCookie)
+    data.User.findByPk(idUsuarioEnCookie)
     .then((user) => {
 
       req.session.user = user.dataValues;

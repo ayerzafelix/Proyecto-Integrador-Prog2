@@ -24,8 +24,9 @@ const controller = {
                 if (claveCorrecta) {
                     // un usuario en session
                     req.session.user = result.dataValues;
-
-              
+                    res.redirect('/')
+ 
+                    
                     if (req.body.rememberme != undefined) {
                         res.cookie('userId', result.id, {maxAge: 1000 * 60 * 15})
                     }
