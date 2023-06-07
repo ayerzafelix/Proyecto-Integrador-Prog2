@@ -20,11 +20,51 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Session
+
 app.use(session({
   secret: 'MyApp',
   resave: false,
   saveUninitialized: true
 }));
+
+//Locals
+
+app.use(function(req, res, next) {
+// Para pasar de session a locals 
+
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
+    return next()
+  }
+  return next();
+});
+
+/* configurar cookies de usuario*/
+app.use(function(req, res, next) {
+  
+  /* si existe la cooki en el navegador && no existe el usuario en la variable session */
+  if (req.cookies.userId != undefined && req.session.user == undefined) {
+    let idUsuarioEnCookie = req.cookies.userId;
+    db.User.findByPk(idUsuarioEnCookie)
+    .then((user) => {
+
+      req.session.user = user.dataValues;
+      res.locals.user = user.dataValues;
+
+      return next();
+      
+    }).catch((err) => {
+      console.log(err);
+    });
+
+  } else {
+    /* Pasa al siguiente */
+    return next();
+  }
+}); 
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
