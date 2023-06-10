@@ -1,5 +1,9 @@
 <%- include('./partials/head') %>
-<%- include('./partials/header') %>
+<% if (locals.user != undefined) { %>
+	<%- include('headerLogueado) %>
+ <% } else { %>
+	<%- include('./partials/header') %>
+<% } %>
 
 
 

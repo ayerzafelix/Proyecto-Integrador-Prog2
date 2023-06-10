@@ -71,16 +71,20 @@ const controller = {
         });
     },
 
-    agregar: function(req,res){
-        return res.render('product-add', {
-         usuarioLogueado: true,
-         users: data.users,
-        })
-   
-     },
+    //  agregar: function(req,res){
+    //        return res.render('product-add', {
+    //        usuarioLogueado: true,
+    //        users: data.users,
+    //        })
+    //
+    //    }, 
 
     showForm: (req,res) => {
-        return res.render('register ')
+        if (req.session.user != undefined) {
+            return res.render('product-add');
+         } else {
+        return res.redirect ('/users/login');
+        }
     },
 
     store: (req,res) => {

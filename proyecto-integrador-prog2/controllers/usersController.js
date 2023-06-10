@@ -2,11 +2,50 @@ const data = require('../data/data')
 const usuarios = data.Usuario; //el alias de usuario.js
 
 const controller = {
-    login: function(req, res) {
-        res.render('login', {
-            usuarioLogueado: false,
 
-        });
+    create: function(req, res) {
+        return res.render('/register')
+    },
+
+    store: function (req, res) {
+        let errors = {};
+
+        if (req.body.email == '') {
+            errors.message = 'El email no debe estar vacio';
+            res.locals.errors = errors;
+            return res.render('register')
+        } else if(req.body.password == '') {
+            errors.message = 'La clave no debe estar vacia';
+            res.locals.errors = errors;
+            return res.render('register')
+        } else {
+            let info = req.body;
+
+            let userStore = {
+                name : info.name,
+                email : info.email,
+                password : bcrypt.hashSync(info.password, 10),
+                remember_token : ''
+            }
+            
+            user.create(userStore)
+            .then(function(result) {
+                return res.redirect('/users/login');
+            })
+            .catch(function (error) {
+                console.log(error);
+                
+            })
+            
+        }
+    }, 
+
+    login: function(req, res) {
+        if (req.session.user != undefined) {
+            return res.redirect('/')
+        } else {
+            return res.render('/users/login')
+        }
     },
 
     loginPost: function(req,res){
