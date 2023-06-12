@@ -1,5 +1,7 @@
 const data = require('../data/data')
 const usuarios = data.Usuario; //el alias de usuario.js
+const bcrypt = require('bcryptjs');
+
 
 const controller = {
 
@@ -51,11 +53,11 @@ const controller = {
     loginPost: function(req,res){
         let emailBuscado = req.body.email;
         let pass = req.body.password;
-
         let filtrado = {
             where: [{email: emailBuscado}]
         };
-        user.findOne(filtrado)
+        usuarios.findOne(filtrado)
+
         .then((result) => {
 
             if (result != null) {
@@ -79,30 +81,27 @@ const controller = {
             } else {
                 return res.send("No existe el mail")
             }
+
+
+
             
         }).catch((err) => {
             console.log(err);
         });
     },
     register:  function(req, res) {
-        res.render('register', {
-            usuarioLogueado: false,
-
-
-        });
+        res.render('register');
     },
     profile: function(req, res){
         res.render('profile', {
             productos: data.productos,
             users: data.users,
-            usuarioLogueado: true,
             comentario: data.comentario
             
         })
     },
     edit: function(req, res) {
         res.render('edit-profile', {
-            usuarioLogueado: true,
             users: data.users,
 
 

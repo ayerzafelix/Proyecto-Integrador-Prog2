@@ -1,9 +1,10 @@
 <%- include('./partials/head') %>
-<% if (locals.user != undefined) { %>
-	<%- include('headerLogueado) %>
- <% } else { %>
+<!-- <% if (locals.user != undefined) { %> -->
+	<!-- <%- include("./partials/headerLogueado") %> -->
+ <!-- <% } else { %> -->
 	<%- include('./partials/header') %>
-<% } %>
+<!-- <% } %> -->
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -37,7 +38,7 @@
 			</div>
 			
 			<section>
-				<form action="/users/login" method="get">
+				<form action="/users/login" method="post">
 
 					<div>
 						<label for="">Nombre:</label>

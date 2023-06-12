@@ -1,9 +1,9 @@
 	<%- include('./partials/head') %>
-	<% if (locals.user != undefined) { %>
-		<%- include('headerLogueado) %>
-	 <% } else { %>
+	<!-- <% if (locals.user != undefined) { %> -->
+		<!-- <%- include("./partials/headerLogueado") %> -->
+	 <!-- <% } else { %> -->
 		<%- include('./partials/header') %>
-	<% } %>
+	<!-- <% } %> -->
     <!-- Banner -->
 	<div class="banner">
 	</div>
@@ -19,7 +19,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-		<% for(let i= 0; i < 8; i++) {%>	
+		<% for(let i= 0; i < productos.length; i++) {%>	
 			
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">

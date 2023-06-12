@@ -13,7 +13,7 @@ router.get('/detail/:id', controller.show);
 
 router.get('/busqueda', controller.resultado )
 
-router.get('/agregar', controller.agregar);
+//router.get('/agregar', controller.agregar);
 
 router.get('/register', controller.showForm);
 

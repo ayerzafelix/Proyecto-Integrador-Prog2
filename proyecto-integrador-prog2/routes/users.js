@@ -12,7 +12,11 @@ router.get('/profile', controller.profile)
 
 router.get('/edit-profile', controller.edit)
 
-router.get('/register', );
+router.get('/register', controller.create );
+router.post('/register', controller.store)
+
+router.get('/login', controller.login );
+router.post('/login', controller.loginPost)
 
 module.exports = router;
 
