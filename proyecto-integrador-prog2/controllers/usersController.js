@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs');
  const controller = {
 
     create: function(req, res) {
-        return res.render('/register')
+        return res.render('register')
     },
 
     store: function (req, res) {
@@ -26,10 +26,9 @@ const bcrypt = require('bcryptjs');
             let info = req.body;
 
             let userStore = {
-                name : info.name,
+                nombreUsuario : info.name,
                 mail : info.mail,
-                contrasena : bcrypt.hashSync(info.contrasena, 10),
-                remember_token : ''
+                pass : bcrypt.hashSync(info.contrasena, 10),
             }
             
             user.create(userStore)
@@ -48,7 +47,7 @@ const bcrypt = require('bcryptjs');
         if (req.session.user != undefined) {
             return res.redirect('/')
         } else {
-            return res.render('/users/login')
+            return res.render('login')
         }
     },
 
