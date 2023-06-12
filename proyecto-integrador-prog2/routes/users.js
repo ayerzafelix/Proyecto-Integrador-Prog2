@@ -4,9 +4,9 @@ const controller = require('../controllers/usersController')
 
 
 /* GET users listing. */
-router.get('/login', controller.login)
+//router.get('/login', controller.login)
 
-router.get('/register', controller.register)
+//router.get('/register', controller.register)
 
 router.get('/profile', controller.profile)
 

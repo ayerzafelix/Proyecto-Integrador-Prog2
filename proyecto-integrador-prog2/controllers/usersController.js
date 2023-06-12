@@ -2,8 +2,10 @@ const data = require('../data/data')
 const usuarios = data.Usuario; //el alias de usuario.js
 const bcrypt = require('bcryptjs');
 
+ 
 
-const controller = {
+
+ const controller = {
 
     create: function(req, res) {
         return res.render('/register')
@@ -25,8 +27,8 @@ const controller = {
 
             let userStore = {
                 name : info.name,
-                email : info.email,
-                password : bcrypt.hashSync(info.password, 10),
+                mail : info.mail,
+                contrasena : bcrypt.hashSync(info.contrasena, 10),
                 remember_token : ''
             }
             
