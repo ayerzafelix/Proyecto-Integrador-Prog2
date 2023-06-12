@@ -1,32 +1,32 @@
-const data = require('../database/models')
-const products = data.Product; // Alias del modelo
-let op = data.Sequelize.Op;
+const db = require('../database/models')
+const products = db.Product; // Alias del modelo
+let op = db.Sequelize.Op;
 
 const controller = {
     // index: function(req,res){
     //     res.send('Mando los prods')
     // },
 
-    // findAll: (req, res) => {
+     findAll: (req, res) => {
 
-    //     products.findAll({
+         products.findAll()
+         //{
     //         order:[['createdAt', 'DESC']],
     //         limit: 5
     //     })
-    //     .then(function (result) {
-    //         return res.render('product', { listaProductos: result });   
-    //     }).catch(function (err){
-    //         console.log(err);
-    //     });
-    // },
+        .then(function (result) {
+             return res.render('product', { listaProductos: result });   
+         }).catch(function (err){
+             console.log(err);
+         });
+     },
 
     // show anterior show: function(req,res){
       // return res.render('product', {
       //  usuarioLogueado: false,
       //  comentario: data.comentario,
       // })
-  
-    // },
+      //},
 
     show: (req,res) => {
         let id = req.params.id;

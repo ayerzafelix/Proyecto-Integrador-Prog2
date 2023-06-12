@@ -1,4 +1,4 @@
-\create schema base_de_datos;
+create schema base_de_datos;
 
 use base_de_datos;
 

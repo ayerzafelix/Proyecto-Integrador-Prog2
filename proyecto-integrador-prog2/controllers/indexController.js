@@ -1,6 +1,7 @@
-const data = require('../data/data')
 const db = require('../database/models')
-const product = db.Product
+const product = db.Product;
+
+
 const controller = {
     index: function(req, res){
 
@@ -15,9 +16,8 @@ const controller = {
 
             res.render('index', {
                 productos: result,
-                users: data.users,
-                usuarioLogueado: true,
-                comentario: data.comentario
+                usuario: result,
+                comentario: result,
             })
         }).catch(function(error) {
             

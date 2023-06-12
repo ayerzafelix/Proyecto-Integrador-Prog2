@@ -1,5 +1,5 @@
-const data = require('../data/data')
-const usuarios = data.Usuario; //el alias de usuario.js
+const db = require('../database/models')
+const usuarios = db.Usuario; //el alias de usuario.js
 const bcrypt = require('bcryptjs');
 
  
@@ -31,7 +31,7 @@ const bcrypt = require('bcryptjs');
                 pass : bcrypt.hashSync(info.contrasena, 10),
             }
             
-            user.create(userStore)
+            usuarios.create(userStore)
             .then(function(result) {
                 return res.redirect('/users/login');
             })

@@ -1,6 +1,6 @@
 // Es una función que recibe dos parametros
 
-const data = require("../../data/data");
+//const data = require("../../data/data");
 
 module.exports = function(sequelize, dataTypes){
 
@@ -51,18 +51,19 @@ module.exports = function(sequelize, dataTypes){
         underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     
-    const Usuario = sequelize.define(alias, cols, config);
+    const Usuarios = sequelize.define(alias, cols, config);
 
 //Relacion
 
-    Usuario.associate = function (models) {
+    /* Usuario.associate = function (models) {
         Usuario.hasMany(models.Product,{
         as:"productos",
         foreingKey:"usuarioId"
       })  
     }; 
+    */
 
 
 
-    return Usuario;
+    return Usuarios;
 };

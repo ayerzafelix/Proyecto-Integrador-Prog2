@@ -49,23 +49,19 @@ module.exports = function(sequelize, dataTypes){
     // crear relaciones
 
 
-    Products.associate = function(models) {
+    /* Products.associate = function(models) {
    
             Products.belongsTo(models.Usuario, {
                 as: "usuario",
                 foreingKey : "usuarioId"
-            })
-            
-          /* ,
-
-
-            
+            }),
+                        
             Products.belongsToMany( models.Comentario , {
                 as: "Comments",
                 foreingKey: "productoId",
                
-            } )*/
-       };
+            } )
+       }; */
 
 
     return Products;
