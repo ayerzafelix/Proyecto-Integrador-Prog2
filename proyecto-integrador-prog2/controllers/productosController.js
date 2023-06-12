@@ -3,10 +3,6 @@ const products = db.Product; // Alias del modelo
 let op = db.Sequelize.Op;
 
 const controller = {
-    // index: function(req,res){
-    //     res.send('Mando los prods')
-    // },
-
      findAll: (req, res) => {
 
          products.findAll()
@@ -14,56 +10,45 @@ const controller = {
     //         order:[['createdAt', 'DESC']],
     //         limit: 5
     //     })
-        .then(function (result) {
+        .then(function(result) {
              return res.render('product', { listaProductos: result });   
          }).catch(function (err){
              console.log(err);
          });
      },
 
-    // show anterior show: function(req,res){
-      // return res.render('product', {
-      //  usuarioLogueado: false,
-      //  comentario: data.comentario,
-      // })
-      //},
-
     show: (req,res) => {
+
+        //Filtrar por Pk
+
         let id = req.params.id;
-
-        /*let rel = {
-            include: [
-                {association: "usuario"}
-            ]
-        }*/
-
-        
         products.findByPk(id)
         .then(function(result){
-
-
             return res.render('product', {
                 product: result,
-                usuarioLogueado: true, // esto se sustituye con el locals
             })
-
         })
         .catch(function(err){
             console.log(err)
         });     
   
+        /*let rel = {
+            include: [
+                {association: "usuario"}
+            ]
+        }*/ 
     },
 
     resultado: (req, res) => {
         let busqueda = req.query.producto;
 
-        producto.findAll({
+        products.findAll({
             where: [{
                 title: {[op.like]: `%${busqueda}%`}
-            }]
+            },]
         })
         .then(function(result){
-            return res.render('busqueda', {listaProductos : result})
+            return res.render('busqueda', {productos: result})
 
         })
         .catch(function(err){

@@ -1,9 +1,9 @@
 <%- include('./partials/head') %>
-<!-- <% if (locals.user != undefined) { %> -->
-	<!-- <%- include("./partials/headerLogueado") %> -->
- <!-- <% } else { %> -->
+<% if (locals.user != undefined) { %> 
+	<%- include("./partials/headerLogueado") %> 
+<% } else { %> 
 	<%- include('./partials/header') %>
-<!-- <% } %> -->
+<% } %> 
 
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +31,6 @@
 						<label for="">Descripcion:</label>
 						<input type="text" name="descripcion" value="">
 					</div>
-
 
 					<div>
 						<button type="submit">Enviar</button>

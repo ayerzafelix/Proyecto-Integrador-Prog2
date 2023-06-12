@@ -1,7 +1,5 @@
 // Es una función que recibe dos parametros
 
-//const data = require("../../data/data");
-
 module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
@@ -55,13 +53,18 @@ module.exports = function(sequelize, dataTypes){
 
 //Relacion
 
-    /* Usuario.associate = function (models) {
-        Usuario.hasMany(models.Product,{
-        as:"productos",
-        foreingKey:"usuarioId"
+     Usuarios.associate = function (models) {
+        
+        Usuarios.hasMany(models.Product,{
+        as:"Product",
+        foreingKey:"productoId"
       })  
+        Usuarios.hasMany(models.Comentario,{
+        as:"Comentarios",
+        foreingKey:"usuarioId"
+      }) 
     }; 
-    */
+    
 
 
 

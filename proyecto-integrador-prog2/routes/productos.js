@@ -7,11 +7,12 @@ const controller = require('../controllers/productosController')
 
 // router.get('/all', controller.findAll);
 
+//findByPk
 router.get('/id/:id', controller.show)
 
-router.get('/detail/:id', controller.show);
+router.get('/detail/:id', controller.show); //filtra por primaryKey
 
-router.get('/busqueda', controller.resultado )
+router.get('/busqueda', controller.resultado ) //findAll
 
 //router.get('/agregar', controller.agregar);
 

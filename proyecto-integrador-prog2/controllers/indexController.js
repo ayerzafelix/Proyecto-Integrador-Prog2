@@ -1,30 +1,29 @@
 const db = require('../database/models')
-const product = db.Product;
+const Product = db.Product;
+
 
 
 const controller = {
-    index: function(req, res){
+    index: function(req,res){
 
-        let rel = {
-            include: [{
-                association: "usuario"
-            }]
-        }
+       // let rel = {
+       //     include: [{
+       //         association: "usuario"
+       //     }]
+        
 
-        product.findAll(rel)
+        Product.findAll()
         .then(function(result) {
 
-            res.render('index', {
+            return res.render('index', {
                 productos: result,
                 usuario: result,
                 comentario: result,
             })
         }).catch(function(error) {
-            
-        });
-
-        
-    }
+            console.log(error);
+       });
+    },
     
 
 }

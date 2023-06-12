@@ -43,15 +43,20 @@ module.exports = function(sequelize, dataTypes){
     const Comments = sequelize.define(alias, cols, config);
 
     
-   /* Crear relaciones 
+   // Crear relaciones 
    Comments.associate = function(models) {
 
         Comments.belongsTo(models.Product , {
-            as: "Comments",
+            as: "Product",
             foreingKey : "productoId"
         })
+
+        Comments.belongsTo(models.Usuario , {
+            as: "Usuario",
+            foreingKey : "usuarioId"
+        })
    };
-*/
+
 
     return Comments;
 };
