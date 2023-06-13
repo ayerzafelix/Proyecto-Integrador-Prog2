@@ -1,6 +1,6 @@
 const db = require('../database/models')
 const products = db.Product; // Alias del modelo
-let op = db.Sequelize.Op;
+let op = db.Sequelize.Op
 
 const controller = {
      findAll: (req, res) => {
@@ -40,16 +40,17 @@ const controller = {
     },
 
     resultado: (req, res) => {
-        let busqueda = req.query.producto;
+        let busqueda = req.query.search;
 
         products.findAll({
-            where: [{
-                title: {[op.like]: `%${busqueda}%`}
+             where: [{
+              producto: {[op.like]: `%${busqueda}%`}
             },]
         })
         .then(function(result){
-            return res.render('busqueda', {productos: result})
-
+            return res.render('busqueda', {
+                listaProductos: result
+            })
         })
         .catch(function(err){
             console.log(err)

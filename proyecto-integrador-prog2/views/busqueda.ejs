@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-  
 <%- include('./partials/head') %>
     <% if (locals.user != undefined) { %>
         <%- include("./partials/headerLogueado") %>
     <% } else { %>
         <%- include('./partials/header') %>
     <% } %>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
 
   <main>
     <section class="section-detalle-busqueda flex-box-c">
@@ -15,9 +17,9 @@
       <section class="section-playlist">
 
         <ol class="flex-box-c">
-          <% for( let i = 0; i < productos.length; i++ ) { %>
+          <% for( let i = 0; i < listaProductos.length; i++ ) { %>
             <li class="li">
-              <a href="/movies/id/<%= productos[i].id %>"><%= productos[i].title %> </a> 
+              <a href="/productos/id/<%= listaProductos[i].id %>"><%= listaProductos[i].title %> </a> 
             </li>
           <% } %>
         </ol>
@@ -28,3 +30,5 @@
 
 </body>
 </html>
+
+<%- include('./partials/footer') %>
