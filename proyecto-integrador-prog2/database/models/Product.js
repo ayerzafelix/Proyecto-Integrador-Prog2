@@ -56,9 +56,9 @@ module.exports = function(sequelize, dataTypes){
                 foreingKey : "usuarioId"
             }),
                         
-            Products.hasMany( models.Comentario , {
-                as: "Comments",
-                foreingKey: "productoId",
+            Products.belongsToMany(models.Comentario , {
+                as: "comments",
+                foreingKey: "id",
                
             } )
        }; 

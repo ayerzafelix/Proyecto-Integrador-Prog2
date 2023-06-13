@@ -47,12 +47,12 @@ module.exports = function(sequelize, dataTypes){
    Comments.associate = function(models) {
 
         Comments.belongsTo(models.Product , {
-            as: "Product",
+            as: "product",
             foreingKey : "productoId"
         })
 
         Comments.belongsTo(models.Usuario , {
-            as: "Usuario",
+            as: "usuario",
             foreingKey : "usuarioId"
         })
    };

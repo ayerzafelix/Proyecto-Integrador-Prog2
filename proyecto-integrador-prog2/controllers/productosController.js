@@ -22,8 +22,17 @@ const controller = {
         //Filtrar por Pk
 
         let id = req.params.id;
-        products.findByPk(id)
+
+        let rel = {
+            include: [
+                {association: "usuario"}
+            ]
+        } 
+
+        products.findByPk(id, rel)
         .then(function(result){
+
+            console.log(result);
             return res.render('product', {
                 product: result,
             })
@@ -32,11 +41,7 @@ const controller = {
             console.log(err)
         });     
   
-        /*let rel = {
-            include: [
-                {association: "usuario"}
-            ]
-        }*/ 
+
     },
 
     resultado: (req, res) => {
