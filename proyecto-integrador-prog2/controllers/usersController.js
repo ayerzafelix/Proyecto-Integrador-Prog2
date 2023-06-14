@@ -26,9 +26,13 @@ const bcrypt = require('bcryptjs');
             let info = req.body;
 
             let userStore = {
-                nombreUsuario : info.name,
+                nombreUsuario : info.user,
                 mail : info.mail,
                 pass : bcrypt.hashSync(info.contrasena, 10),
+                fotoPerfil: info.foto,
+                fecha: info.edad,
+                DNI: info.dni,
+                
             }
             
             usuarios.create(userStore)
@@ -53,16 +57,16 @@ const bcrypt = require('bcryptjs');
 
     loginPost: function(req,res){
         let emailBuscado = req.body.email;
-        let pass = req.body.password;
+        let pass = req.body.contrasena;
         let filtrado = {
-            where: [{email: emailBuscado}]
+            where: [{mail: emailBuscado}]
         };
         usuarios.findOne(filtrado)
 
         .then((result) => {
 
             if (result != null) {
-                let claveCorrecta = bcrypt.compareSync(pass, result.password)
+                let claveCorrecta = bcrypt.compareSync(pass, result.pass)
                 if (claveCorrecta) {
                     // un usuario en session
                     req.session.user = result.dataValues;
@@ -93,6 +97,7 @@ const bcrypt = require('bcryptjs');
     register:  function(req, res) {
         res.render('register');
     },
+
     profile: function(req, res){
         res.render('profile', {
             productos: data.productos,
