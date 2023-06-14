@@ -117,10 +117,8 @@ insert into infoComentarios (productoId, usuarioId, comentario) values
 (11,2, 'Que rico!!'),
 (11,3, 'Muy bueno'),
 (11,4, 'No la banqué'),
-(12,2, 'La mejor q probe en mi vidaaaa'),
-(12,4, 'Es un 10!! Me sorprendió'),
-(12,1, 'Me la dieron cruda!! Como les da la cara??')
+(12,1, 'La mejor q probe en mi vidaaaa'),
+(12,2, 'Es un 10!! Me sorprendió'),
+(12,3, 'Me la dieron cruda!! Como les da la cara??'),
+(12,4, "Que buena hamburguesaa!")
 ;
-
-
-
