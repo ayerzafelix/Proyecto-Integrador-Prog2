@@ -12,7 +12,11 @@ const controller = {
        //     }]
         
 
-        Producto.findAll()
+        Producto.findAll({
+            include: {
+                all:true,
+                nested: true
+            }})
         .then(function(result) {
 
             return res.render('index', {

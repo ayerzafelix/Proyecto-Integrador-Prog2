@@ -48,8 +48,19 @@ const controller = {
     resultado: (req, res) => {
         let busqueda = req.query.search;
 
+        let rel = {
+            include: {
+                all:true,
+                nested: true
+            }
+        } 
+
         productos.findAll({
-             where: [{
+            include: {
+                all:true,
+                nested: true
+            },
+            where: [{
               producto: {[op.like]: `%${busqueda}%`}
             },]
         })
