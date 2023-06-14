@@ -171,7 +171,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/products/Banner.JPG);
+  background-image: url(/images/productos/Banner.JPG);
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center center;
@@ -179,18 +179,18 @@ hr {
 }
 
 
-/*====== Products ======*/
-.products-wrapper {
+/*====== Productos ======*/
+.productos-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.products-title {
+.productos-title {
   font-size: 2.4em;
   font-weight: 400;
 }
 
-.product-box {
+.producto-box {
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
@@ -198,15 +198,15 @@ hr {
   margin: 20px 0;
 }
 
-.product-box a {
+.producto-box a {
   display: block;
 }
 
-.product-box_image {
+.producto-box_image {
   border-bottom: 1px solid var(--light-gray);
 }
 
-.product-box_data {
+.producto-box_data {
   padding: 15px;
   position: relative;
   display: flex;
@@ -214,20 +214,20 @@ hr {
   flex-wrap: wrap;
 }
 
-.product-box_data h2 {
+.producto-box_data h2 {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
 }
 
-.product-box_data span {
+.producto-box_data span {
   font-size: 1.5em;
   font-weight: 300;
   color: var(--green);
   margin: 0 0 0 10px;
 }
 
-.product-box_data p {
+.producto-box_data p {
   font-size: 1.5em;
   width: 100%;
   color: var(--gray);
@@ -237,7 +237,7 @@ hr {
   overflow: hidden;
 }
 
-.product-box_data i {
+.producto-box_data i {
   color: var(--green);
   font-size: 1.8em;
   width: 35px;
@@ -259,16 +259,16 @@ hr {
   text-align: center
 }
 
-.product-box:hover {
+.producto-box:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.product-box:hover p {
+.producto-box:hover p {
   height: 36px;
   margin-top: 15px;
 }
 
-.product-box:hover i {
+.producto-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
 }
@@ -313,41 +313,41 @@ hr {
 }
 
 
-/*====== Product Detail ======*/
-.product-detail {
+/*====== Producto Detail ======*/
+.producto-detail {
   background-color: #ffffff;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.product-detail-img {
+.producto-detail-img {
   width: 70%;
   display: block;
   margin: auto;
 }
 
-.product-detail-info {
+.producto-detail-info {
   border-right: 1px solid var(--light-gray);
   padding: 15px;
   /* height: 100%; */
 }
 
-.product-detail-title {
+.producto-detail-title {
   font-weight: 400;
   font-size: 2.8em;
 }
 
-.product-detail-description {
+.producto-detail-description {
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
 }
 
-.product-detail-price {
+.producto-detail-price {
   font-size: 5.5em;
   margin: 10px 0;
 }
-.product-detail .form{
+.producto-detail .form{
   padding: 0 15px;
   display: flex;
   flex-direction: column;

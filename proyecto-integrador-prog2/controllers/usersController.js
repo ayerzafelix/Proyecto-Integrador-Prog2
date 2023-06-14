@@ -115,8 +115,8 @@ const bcrypt = require('bcryptjs');
         });
     },
 
-    product: function(req, res) {
-        res.render('product', {
+    producto: function(req, res) {
+        res.render('producto', {
             users: data.users,
 
         });

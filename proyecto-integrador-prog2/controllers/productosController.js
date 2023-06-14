@@ -1,17 +1,17 @@
 const db = require('../database/models')
-const products = db.Product; // Alias del modelo
+const productos = db.Producto; // Alias del modelo
 let op = db.Sequelize.Op
 
 const controller = {
      findAll: (req, res) => {
 
-         products.findAll()
+         productos.findAll()
          //{
     //         order:[['createdAt', 'DESC']],
     //         limit: 5
     //     })
         .then(function(result) {
-             return res.render('product', { listaProductos: result });   
+             return res.render('producto', { listaProductos: result });   
          }).catch(function (err){
              console.log(err);
          });
@@ -24,17 +24,18 @@ const controller = {
         let id = req.params.id;
 
         let rel = {
-            include: [
-                {association: "usuario"}
-            ]
+            include: {
+                all:true,
+                nested: true
+            }
         } 
 
-        products.findByPk(id, rel)
+        productos.findByPk(id, rel)
         .then(function(result){
 
             console.log(result);
-            return res.render('product', {
-                product: result,
+            return res.render('producto', {
+                producto: result,
             })
         })
         .catch(function(err){
@@ -47,7 +48,7 @@ const controller = {
     resultado: (req, res) => {
         let busqueda = req.query.search;
 
-        products.findAll({
+        productos.findAll({
              where: [{
               producto: {[op.like]: `%${busqueda}%`}
             },]
@@ -63,7 +64,7 @@ const controller = {
     },
 
     //  agregar: function(req,res){
-    //        return res.render('product-add', {
+    //        return res.render('producto-add', {
     //        usuarioLogueado: true,
     //        users: data.users,
     //        })
@@ -72,7 +73,7 @@ const controller = {
 
     showForm: (req,res) => {
         if (req.session.user != undefined) {
-            return res.render('product-add');
+            return res.render('producto-add');
          } else {
         return res.redirect ('/users/login');
         }
@@ -80,7 +81,7 @@ const controller = {
 
     store: (req,res) => {
         let info = req.body;
-        products.create(info)
+        productos.create(info)
         .then((result) => {
             return res.redirect('/productos/') 
         }).catch((error) => {

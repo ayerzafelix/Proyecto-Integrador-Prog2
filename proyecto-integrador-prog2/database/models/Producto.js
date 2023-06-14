@@ -4,7 +4,7 @@ module.exports = function(sequelize, dataTypes){
 
     // Crear 3 variables 
 
-    let alias = "Product" ; // Un apodo para requerirlo en los controllers 
+    let alias = "Producto" ; // Un apodo para requerirlo en los controllers 
 
 
     // Mapeo exacto de cada una de las columnas
@@ -43,28 +43,27 @@ module.exports = function(sequelize, dataTypes){
         underscored: false, //Si los nombres de las columnas en la db tienen guiones bajos en lugar de camelCase.
     };
     
-    const Products = sequelize.define(alias, cols, config);
+    const Productos = sequelize.define(alias, cols, config);
 
 
     // crear relaciones
 
 
-     Products.associate = function(models) {
+     Productos.associate = function(models) {
    
-            Products.belongsTo(models.Usuario, {
+            Productos.belongsTo(models.Usuario, {
                 as: "usuario",
                 foreingKey : "usuarioId"
             }),
                         
-            Products.belongsToMany(models.Comentario , {
+            Productos.hasMany(models.Comentario , {
                 as: "comments",
                 foreingKey: "id",
-               
             } )
        }; 
 
 
-    return Products;
+    return Productos;
 };
 
 

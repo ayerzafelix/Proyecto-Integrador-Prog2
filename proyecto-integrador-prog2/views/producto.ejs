@@ -1,0 +1,56 @@
+<%- include('./partials/head') %>
+<% if (locals.user != undefined) { %>
+    <%- include("./partials/headerLogueado") %>
+<% } else { %>
+    <%- include('./partials/header') %>
+<% } %>
+
+
+
+<div class="container productos-wrapper">
+    <div class="d-flex align-items-center">
+        <h2 class="productos-title"><%= producto.producto%></h2> 
+        <p class="producto-detail-description">
+            <a href="/productos/agregar">Editar</a>
+        </p>
+    </div>
+    <div class="producto-detail">
+        <div class="row">
+            <article class="col-12 col-lg-8 producto-detail-info">
+                <img src=<%= producto.fotoProducto%> alt="" class="producto-detail-img">
+                <p class="producto-detail-description"><%= producto.descripcion %></p>
+            </article>
+            <div class="col-12 col-lg-4">
+                <section class="comments">
+
+
+
+                <% for(let i= 0; i < producto.comments.length; i++) {%>	
+                    <article>
+                        <img src= <%=producto.comments[i].usuario.fotoPerfil%> alt="">
+                        <div class="data">
+                            <p class="user">
+                                <strong> <a href="/users/profile"></a><%= producto.comments[i].usuario.nombreUsuario%>: </a> </strong>
+                                <%= producto.comments[i].comentario %>
+                            </p>
+                        </div>
+                    </article>
+                <% } %>
+
+
+
+
+
+                    
+                </section>
+                <form class="form" action="" method="get">
+                    <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('./partials/footer') %>

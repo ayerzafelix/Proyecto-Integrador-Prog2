@@ -46,8 +46,8 @@ module.exports = function(sequelize, dataTypes){
    // Crear relaciones 
    Comments.associate = function(models) {
 
-        Comments.belongsTo(models.Product , {
-            as: "product",
+        Comments.belongsTo(models.Producto , {
+            as: "producto",
             foreingKey : "productoId"
         })
 

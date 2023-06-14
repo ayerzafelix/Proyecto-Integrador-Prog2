@@ -1,5 +1,5 @@
 const db = require('../database/models')
-const Product = db.Product;
+const Producto = db.Producto;
 
 
 
@@ -12,7 +12,7 @@ const controller = {
        //     }]
         
 
-        Product.findAll()
+        Producto.findAll()
         .then(function(result) {
 
             return res.render('index', {
