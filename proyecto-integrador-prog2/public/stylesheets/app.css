@@ -492,6 +492,13 @@ textarea.form-input {
   color: #fff;
 }
 
+.boton {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 15px 15px 15px 5px;
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {

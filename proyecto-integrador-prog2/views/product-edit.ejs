@@ -11,29 +11,29 @@
 	<div class="container productos-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="productos-title">Agregar producto</h2>
+				<h2 class="productos-title">Actualizar producto</h2>
 			</div>
 			<!-- Show the "ultimos" productos -->
 			<section>
-				<form action="/productos/agregar" method="post">
+				<form action="/productos/actualizar/<%= productos.id %>" method="post">
 
 					<div>
 						<label for="">Imagen:</label>
-						<input type="text" name="fotoProducto" value="">
+						<input type="text" name="fotoProducto" value="<%= productos.fotoProducto %>">
 					</div>
 
 					<div>
 						<label for="">Nombre del producto:</label>
-						<input type="text" name="producto" value="">
+						<input type="text" name="producto" value="<%= productos.producto %>">
 					</div>
 
 					<div>
 						<label for="">Descripcion:</label>
-						<input type="text" name="descripcion" value="">
+						<input type="text" name="descripcion" value="<%= productos.descripcion %>">
 					</div>
 
 					<div>
-						<button type="submit">Enviar</button>
+						<button type="submit">Actualizar</button>
 					</div>
 
 

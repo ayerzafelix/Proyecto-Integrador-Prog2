@@ -74,33 +74,57 @@ const controller = {
         });
     },
 
-    //  agregar: function(req,res){
-    //        return res.render('producto-add', {
-    //        usuarioLogueado: true,
-    //        users: data.users,
-    //        })
-    //
-    //    }, 
 
     showForm: (req,res) => {
-        if (req.session.user != undefined) {
-            return res.render('producto-add');
-         } else {
-        return res.redirect ('/users/login');
-        }
+            return res.render('product-add');
     },
 
     store: (req,res) => {
         let info = req.body;
+        console.log(info)
         productos.create(info)
-        .then((result) => {
-            return res.redirect('/productos/') 
-        }).catch((error) => {
-            console.log(error)
-        });
+            return res.redirect('/') 
         
+    },
+
+    showFormupdate: (req,res) => {
+        let id = req.params.id;
+        productos.findByPk(id)
+        .then((result) => {
+            console.log(result);
+            return res.render("product-edit", {productos: result})
+        }).catch((err) => {
+            console.log(err)
+        })        
+    },
+
+    update: (req, res) => {
+        let id = req.params.id
+        let info = req.body;
+        console.log(info);
+        productos.update(info, {
+            where: [
+                {id: id}
+            ]
+        }).then((result) => {
+            return res.redirect("/productos/detail/" + id)
+        }).catch((err) => {
+            console.log(err)
+        });
+    },
+
+    destroy: (req, res) => {
+        let idEliminar = req.body.id
+        productos.destroy({
+            where: [
+                {id: idEliminar}
+            ]
+        }).then((result) => {
+            return res.redirect("/")
+        }).catch((err) => {
+            console.log(err)
+        });
     }
- 
 
 }
 
