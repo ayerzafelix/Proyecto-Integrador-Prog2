@@ -5,11 +5,15 @@ let op = db.Sequelize.Op
 const controller = {
      findAll: (req, res) => {
 
-         productos.findAll(
-         {
-             order:[['createdAt', 'DESC']],
-             limit: 10
-         })
+        productos.findAll({
+            include: {
+                all:true,
+                nested: true
+            },
+            order: [
+                ['createdAt', 'DESC'],
+            ]
+        })
         .then(function(result) {
              return res.render('producto', { listaProductos: result });   
          }).catch(function (err){
@@ -60,10 +64,15 @@ const controller = {
                 all:true,
                 nested: true
             },
-            where: [{
-              producto: {[op.like]: `%${busqueda}%`},
-              descripcion: {[op.like]: `%${busqueda}%`}
-            },]
+            where: {
+                [op.or]: [
+                    {producto: {[op.like]: `%${busqueda}%`}},
+                    {descripcion: {[op.like]: `%${busqueda}%`}}
+                ]
+            },
+            order: [
+                ['createdAt', 'DESC'],
+            ]
         })
         .then(function(result){
             return res.render('busqueda', {
@@ -86,7 +95,7 @@ const controller = {
 
     store: (req,res) => {
         let info = req.body;
-        console.log(info)
+        info['usuarioId'] = req.session.user.id
         productos.create(info)
 
         /*let filtrado = {

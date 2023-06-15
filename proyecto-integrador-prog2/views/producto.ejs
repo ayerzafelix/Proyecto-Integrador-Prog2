@@ -28,14 +28,21 @@
             <div class="col-12 col-lg-4">
                 <section class="comments">
 
-
+                        <article>
+                            <div class="data">
+                                <p class="user">
+                                    Creado por: 
+                                    <strong> <a href="/users/profile/<%=producto.usuario.id %>"><%= producto.usuario.nombreUsuario%></a></strong>
+                                </p>
+                            </div>
+                        </article>
 
                 <% for(let i= 0; i < producto.comments.length; i++) {%>	
                     <article>
                         <img src= <%=producto.comments[i].usuario.fotoPerfil%> alt="">
                         <div class="data">
                             <p class="user">
-                                <strong> <a href="/users/profile"><%= producto.comments[i].usuario.nombreUsuario%>: </a> </strong>
+                                <strong> <a href="/users/profile/<%=producto.comments[i].usuario.id %>"><%= producto.comments[i].usuario.nombreUsuario%>: </a> </strong>
                                 <%= producto.comments[i].comentario %>
                             </p>
                         </div>

@@ -13,10 +13,14 @@ const controller = {
         
 
         Producto.findAll({
-            include: {
-                all:true,
-                nested: true
-            }})
+                include: {
+                    all:true,
+                    nested: true
+                },
+                order: [
+                    ['createdAt', 'DESC'],
+                ]
+            })
         .then(function(result) {
 
             return res.render('index', {

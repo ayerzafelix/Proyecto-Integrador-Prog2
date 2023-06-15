@@ -1,9 +1,9 @@
 <%- include('./partials/head') %>
-<!-- <% if (locals.user != undefined) { %> -->
-	<!-- <%- include("./partials/headerLogueado") %> -->
- <!-- <% } else { %> -->
+<% if (locals.user != undefined) { %> 
+<%- include('./partials/headerLogueado') %> 
+<% } else { %> 
 	<%- include('./partials/header') %>
-<!-- <% } %> -->
+<% } %> 
 
 
 
@@ -15,11 +15,11 @@
 	<section class="info-usuario container productos-wrapper">
 		<div class="row">
 			<div class="img-container offset-3 col-2">
-				<img src="<%=locals.user.fotoPerfil%>" alt="foto de perfil" class="foto-perfil">
+				<img src="<%=users.fotoPerfil%>" alt="foto de perfil" class="foto-perfil">
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%=locals.user.nombreUsuario%>
+					<h1 class="main-title"><%=users.nombreUsuario%>
 						<a href="/users/edit-profile">
 							<i class="fas fa-cog"></i>
 						</a>
@@ -28,7 +28,7 @@
 				</div>
 				<div>
 					<ul class="">
-						<li><%=locals.user.mail%></li>
+						<li><%=users.mail%></li>
 						<br>
 						<li>8 productos</li>
 						<li>200 seguidores</li>

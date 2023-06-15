@@ -115,7 +115,7 @@ const bcrypt = require('bcryptjs');
             //{association: "NO SE QUE VA ACA"}, { association: "ACA TAMPOCO"}
             ]
         }
-        users.findByPk(id,rel)
+        usuarios.findByPk(id,rel)
          .then(function(result){
             return res.render('profile',{
                 users: result,
