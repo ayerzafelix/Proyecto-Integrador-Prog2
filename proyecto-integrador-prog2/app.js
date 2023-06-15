@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Session
 
 app.use(session({
-  secret: 'MyApp',
+  secret: 'myApp',
   resave: false,
   saveUninitialized: true
 }));

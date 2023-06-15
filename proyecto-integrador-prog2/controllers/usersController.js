@@ -58,6 +58,7 @@ const bcrypt = require('bcryptjs');
     loginPost: function(req,res){
         let mailBuscado = req.body.mail;
         let pass = req.body.pass;
+
         let filtrado = {
             where: [{mail: mailBuscado}]
         };
@@ -68,7 +69,7 @@ const bcrypt = require('bcryptjs');
             if (result != null) {
                 let claveCorrecta = bcrypt.compareSync(pass, result.pass)
                 if (claveCorrecta) {
-                    // un usuario en session
+                    // Poner un usuario en session
                     req.session.user = result.dataValues;
                     res.redirect('/')
  
@@ -106,6 +107,26 @@ const bcrypt = require('bcryptjs');
             
         })
     },
+
+    profileId: function(req,res){
+        let id = req.params.id;
+        let rel= {
+            include: [
+            //{association: "NO SE QUE VA ACA"}, { association: "ACA TAMPOCO"}
+            ]
+        }
+        users.findByPk(id,rel)
+         .then(function(result){
+            return res.render('profile',{
+                users: result,
+               
+            })        
+        })
+        .catch(function(error){
+            console.log(error);
+        });
+    },
+
     edit: function(req, res) {
         res.render('edit-profile', {
             users: data.users,

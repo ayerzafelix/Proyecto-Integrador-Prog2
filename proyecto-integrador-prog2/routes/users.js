@@ -11,6 +11,7 @@ const controller = require('../controllers/usersController')
 router.get('/profile', controller.profile)
 
 router.get('/edit-profile', controller.edit)
+router.get("/profile/:id", controller.profileId)
 
 router.get('/register', controller.create );
 router.post('/register', controller.store)

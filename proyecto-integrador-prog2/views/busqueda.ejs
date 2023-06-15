@@ -12,6 +12,7 @@
 
   <main>
     <section class="section-detalle-busqueda flex-box-c">
+      <% if (listaProductos.length > 0) { %>
       <h2>Resultado de Busqueda:</h2>
 
       <section class="section-playlist">
@@ -37,6 +38,9 @@
             </div>
       
           <% } %>
+        <% } else {%>
+          <h2>No hay resultados para su criterio de búsqueda</h2>
+        <% } %>
 
         </ol>
       </section>
