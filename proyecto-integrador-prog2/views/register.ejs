@@ -33,7 +33,7 @@
 				<h2 class="productos-title">Registrate</h2>
 
 				<% if (locals.errors) { %>
-					<p style="color: black;"><%= locals.errors.message %></p>
+					<p style="color: green;"><%= locals.errors.message %></p>
 				<% } %>
 			</div>
 			
@@ -42,7 +42,7 @@
 
 					<div>
 						<label for="">Nombre:</label>
-						<input type="text" name="user" value="">
+						<input type="text" name="nombreUsuario" value="">
 					</div>
 
 					<div>
@@ -52,22 +52,22 @@
 
 					<div>
 						<label for="">Contrasena:</label>
-						<input type="password" name="contrasena" value="">
+						<input type="password" name="pass" value="">
 					</div>
 
 					<div>
 						<label for="">Fecha nacimiento:</label>
-						<input type="date" name="edad" value="">
+						<input type="date" name="fecha" value="">
 					</div> 
 
 					<div>
 						<label for="">DNI:</label>
-						<input type="number" name="dni" value="">
+						<input type="number" name="DNI" value="">
 					</div>
 
 					 <div>
 						<label for="">Foto de perfil:</label>
-						<input type="file" name="foto" value="">
+						<input type="file" name="fotoPerfil" value="">
 					</div>
 
 					<div>

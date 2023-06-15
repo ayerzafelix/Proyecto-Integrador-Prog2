@@ -14,11 +14,11 @@ const bcrypt = require('bcryptjs');
     store: function (req, res) {
         let errors = {};
 
-        if (req.body.email == '') {
+        if (req.body.mail == '') {
             errors.message = 'El email no debe estar vacio';
             res.locals.errors = errors;
             return res.render('register')
-        } else if(req.body.password == '') {
+        } else if(req.body.pass == '') {
             errors.message = 'La clave no debe estar vacia';
             res.locals.errors = errors;
             return res.render('register')
@@ -26,12 +26,12 @@ const bcrypt = require('bcryptjs');
             let info = req.body;
 
             let userStore = {
-                nombreUsuario : info.user,
+                nombreUsuario : info.nombreUsuario,
                 mail : info.mail,
-                pass : bcrypt.hashSync(info.contrasena, 10),
-                fotoPerfil: info.foto,
-                fecha: info.edad,
-                DNI: info.dni,
+                pass : bcrypt.hashSync(info.pass, 10),
+                fotoPerfil: info.fotoPerfil,
+                fecha: info.fecha,
+                DNI: info.DNI,
                 
             }
             
@@ -56,10 +56,10 @@ const bcrypt = require('bcryptjs');
     },
 
     loginPost: function(req,res){
-        let emailBuscado = req.body.email;
-        let pass = req.body.contrasena;
+        let mailBuscado = req.body.mail;
+        let pass = req.body.pass;
         let filtrado = {
-            where: [{mail: emailBuscado}]
+            where: [{mail: mailBuscado}]
         };
         usuarios.findOne(filtrado)
 
@@ -81,7 +81,7 @@ const bcrypt = require('bcryptjs');
 
                     
                 } else {
-                    return res.send("Existe el mail y pero la password es incorrecta");
+                    return res.send("Existe el mail pero la password es incorrecta");
                 }
             } else {
                 return res.send("No existe el mail")

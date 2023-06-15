@@ -76,7 +76,11 @@ const controller = {
 
 
     showForm: (req,res) => {
+        if (req.session.user != undefined) {
             return res.render('product-add');
+        } else {
+            return res.redirect('/users/login');
+        }
     },
 
     store: (req,res) => {
