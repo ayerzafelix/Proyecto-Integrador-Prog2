@@ -5,11 +5,11 @@ let op = db.Sequelize.Op
 const controller = {
      findAll: (req, res) => {
 
-         productos.findAll()
-         //{
-    //         order:[['createdAt', 'DESC']],
-    //         limit: 5
-    //     })
+         productos.findAll(
+         {
+             order:[['createdAt', 'DESC']],
+             limit: 10
+         })
         .then(function(result) {
              return res.render('producto', { listaProductos: result });   
          }).catch(function (err){
@@ -61,7 +61,8 @@ const controller = {
                 nested: true
             },
             where: [{
-              producto: {[op.like]: `%${busqueda}%`}
+              producto: {[op.like]: `%${busqueda}%`},
+              descripcion: {[op.like]: `%${busqueda}%`}
             },]
         })
         .then(function(result){

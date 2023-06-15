@@ -71,7 +71,7 @@ const bcrypt = require('bcryptjs');
                 if (claveCorrecta) {
                     // Poner un usuario en session
                     req.session.user = result.dataValues;
-                    res.redirect('/')
+                    
  
                     
                     if (req.body.rememberme != undefined) {
