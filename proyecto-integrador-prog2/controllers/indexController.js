@@ -28,6 +28,15 @@ const controller = {
             console.log(error);
        });
     },
+
+    logout: function(req, res){
+        req.session.user = undefined
+        req.session.destroy()
+
+        res.clearCookie('userId')
+        res.redirect('/')
+        
+    }
     
 
 }

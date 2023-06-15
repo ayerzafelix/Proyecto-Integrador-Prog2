@@ -100,9 +100,9 @@ const bcrypt = require('bcryptjs');
 
     profile: function(req, res){
         res.render('profile', {
-            productos: data.productos,
-            users: data.users,
-            comentario: data.comentario
+            productos: db.productos,
+            users: db.users,
+            comentario: db.comentario
             
         })
     },
