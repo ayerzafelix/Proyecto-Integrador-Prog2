@@ -13,38 +13,51 @@ const bcrypt = require('bcryptjs');
 
     store: function (req, res) {
         let errors = {};
-
-        if (req.body.mail == '') {
-            errors.message = 'El email no debe estar vacio';
-            res.locals.errors = errors;
-            return res.render('register')
-        } else if(req.body.pass == '') {
-            errors.message = 'La clave no debe estar vacia';
-            res.locals.errors = errors;
-            return res.render('register')
-        } else {
-            let info = req.body;
-
-            let userStore = {
-                nombreUsuario : info.nombreUsuario,
-                mail : info.mail,
-                pass : bcrypt.hashSync(info.pass, 10),
-                fotoPerfil: info.fotoPerfil,
-                fecha: info.fecha,
-                DNI: info.DNI,
+        let email_repetido= req.body.mail;
+        let filtrado ={
+            where:[{mail:email_repetido}]
+        }
+        usuarios.findOne(filtrado)
+        .then((result)=>{
+            if(result != undefined){
+                errors.message = "El email ya esta registrado"
+                res.locals.errors = errors;
+                return res.render('register')
+            }
+            else if (req.body.mail == '') {
+                errors.message = 'El email no debe estar vacio';
+                res.locals.errors = errors;
+                return res.render('register')
+            } else if(req.body.pass == '') {
+                errors.message = 'La clave no debe estar vacia';
+                res.locals.errors = errors;
+                return res.render('register')
+            } else {
+                let info = req.body;
+    
+                let userStore = {
+                    nombreUsuario : info.nombreUsuario,
+                    mail : info.mail,
+                    pass : bcrypt.hashSync(info.pass, 10),
+                    fotoPerfil: info.fotoPerfil,
+                    fecha: info.fecha,
+                    DNI: info.DNI,
+                    
+                }
+                
+                usuarios.create(userStore)
+                .then(function(result) {
+                    return res.redirect('/users/login');
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    
+                })
                 
             }
-            
-            usuarios.create(userStore)
-            .then(function(result) {
-                return res.redirect('/users/login');
-            })
-            .catch(function (error) {
-                console.log(error);
-                
-            })
-            
-        }
+        })
+
+
     }, 
 
     login: function(req, res) {
