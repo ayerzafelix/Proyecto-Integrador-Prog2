@@ -97,17 +97,6 @@ const controller = {
         let info = req.body;
         info['usuarioId'] = req.session.user.id
         productos.create(info)
-
-        /*let filtrado = {
-            where: [{mail: producto_buscado}]
-        };
-        productos.findoOne(filtrado)
-        .then(function(result){
-            if (result != null){
-                req.session.producto = result.dataValues
-            }
-        })*/
-
             return res.redirect('/') 
         
     },

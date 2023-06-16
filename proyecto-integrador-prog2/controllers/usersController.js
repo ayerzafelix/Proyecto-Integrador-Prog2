@@ -110,10 +110,11 @@ const bcrypt = require('bcryptjs');
 
     profileId: function(req,res){
         let id = req.params.id;
-        let rel= {
-            include: [
-            //{association: "NO SE QUE VA ACA"}, { association: "ACA TAMPOCO"}
-            ]
+        let rel = {
+            include: {
+                all:true,
+                nested: true
+            },
         }
         usuarios.findByPk(id,rel)
          .then(function(result){
@@ -144,6 +145,7 @@ const bcrypt = require('bcryptjs');
     producto: function(req, res) {
         res.render('producto', {
             users: data.users,
+            
 
         });
     }

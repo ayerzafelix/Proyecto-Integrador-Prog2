@@ -11,12 +11,16 @@
     <div class="d-flex align-items-center">
         <h2 class="productos-title"><%= producto.producto%></h2> 
         <p class="producto-detail-description">
+            <% if (locals.user && locals.user.id == producto.usuarioId) { %>
             <a href=<%= "/productos/actualizar/" + producto.id %>>Editar</a>
             <br>
             <form action="/productos/eliminar/" method="post">
                 <input type="text" hidden name ="id" id="" value="<%= producto.id %>">
                 <input type="submit" value="Eliminar">
             </form>
+            <% } else {%> 
+                <p class="producto-detail-description">No podes borrar este producto porque no sos el creador</p>
+                <% }%> 
         </p>
     </div>
     <div class="producto-detail">
