@@ -1,7 +1,7 @@
 const db = require('../database/models')
 const usuarios = db.Usuario; //el alias de usuario.js
 const bcrypt = require('bcryptjs');
-
+let op = db.Sequelize.Op
  
 
 
@@ -182,12 +182,12 @@ const bcrypt = require('bcryptjs');
     resultadoUsuario: (req, res) => {
         let busqueda = req.query.search;
 
-        let rel = {
-            include: {
-                all:true,
-                nested: true
-            }
-        } 
+        //let rel = {
+        //    include: {
+        //        all:true,
+         //       nested: true
+        //    }
+        //} 
 
         usuarios.findAll({
             include: {
@@ -195,8 +195,9 @@ const bcrypt = require('bcryptjs');
                 nested: true
             },
             where: {
-                [op.like]: [
+                [op.or]: [
                     {nombreUsuario: {[op.like]: `%${busqueda}%`}},
+                    {mail: {[op.like]: `%${busqueda}%`}},
                 ]
             },
             order: [
@@ -204,9 +205,7 @@ const bcrypt = require('bcryptjs');
             ]
         })
         .then(function(result){
-            return res.render('busqueda', {
-                listaUsuarios: result
-            })
+            return res.render('busquedaUsuario', { listaUsuarios: result });   
         })
         .catch(function(err){
             console.log(err)
