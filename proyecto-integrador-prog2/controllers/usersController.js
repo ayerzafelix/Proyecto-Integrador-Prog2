@@ -31,23 +31,24 @@ const bcrypt = require('bcryptjs');
                 errors.message = 'La clave no debe estar vacia';
                 res.locals.errors = errors;
                 return res.render('register')
-            } else if(req.body.fotoPerfil == '') {
-                errors.message = 'La foto no debe estar vacia';
-                res.locals.errors = errors;
-                return res.render('register')
-            } else if(req.body.nombreUsuario == '') {
-                errors.message = 'El usuario no debe estar vacio';
-                res.locals.errors = errors;
-                return res.render('register')
-            } else if(req.body.fecha == '') {
-                errors.message = 'La fecha no debe estar vacia';
-                res.locals.errors = errors;
-                return res.render('register')
-            } else if(req.body.DNI == '') {
-                errors.message = 'El DNI no debe estar vacio';
-                res.locals.errors = errors;
-                return res.render('register')
-            } else {
+            }
+            // else if(req.body.fotoPerfil == '') {
+            //     errors.message = 'La foto no debe estar vacia';
+            //     res.locals.errors = errors;
+            //     return res.render('register')
+            // } else if(req.body.nombreUsuario == '') {
+            //     errors.message = 'El usuario no debe estar vacio';
+            //     res.locals.errors = errors;
+            //     return res.render('register')
+            // } else if(req.body.fecha == '') {
+            //     errors.message = 'La fecha no debe estar vacia';
+            //     res.locals.errors = errors;
+            //     return res.render('register')
+            // } else if(req.body.DNI == '') {
+            //     errors.message = 'El DNI no debe estar vacio';
+            //     res.locals.errors = errors;
+            //     return res.render('register')
+             else {
                 let info = req.body;
     
                 let userStore = {
