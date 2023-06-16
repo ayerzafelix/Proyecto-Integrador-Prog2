@@ -10,7 +10,6 @@ const bcrypt = require('bcryptjs');
     create: function(req, res) {
         return res.render('register')
     },
-
     store: function (req, res) {
         let errors = {};
         let email_repetido= req.body.mail;
@@ -30,6 +29,22 @@ const bcrypt = require('bcryptjs');
                 return res.render('register')
             } else if(req.body.pass == '') {
                 errors.message = 'La clave no debe estar vacia';
+                res.locals.errors = errors;
+                return res.render('register')
+            } else if(req.body.fotoPerfil == '') {
+                errors.message = 'La foto no debe estar vacia';
+                res.locals.errors = errors;
+                return res.render('register')
+            } else if(req.body.nombreUsuario == '') {
+                errors.message = 'El usuario no debe estar vacio';
+                res.locals.errors = errors;
+                return res.render('register')
+            } else if(req.body.fecha == '') {
+                errors.message = 'La fecha no debe estar vacia';
+                res.locals.errors = errors;
+                return res.render('register')
+            } else if(req.body.DNI == '') {
+                errors.message = 'El DNI no debe estar vacio';
                 res.locals.errors = errors;
                 return res.render('register')
             } else {
@@ -58,7 +73,8 @@ const bcrypt = require('bcryptjs');
         })
 
 
-    }, 
+    },
+    
 
     login: function(req, res) {
         if (req.session.user != undefined) {
