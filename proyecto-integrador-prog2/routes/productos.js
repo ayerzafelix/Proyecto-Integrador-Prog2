@@ -19,6 +19,8 @@ router.get('/agregar', controller.showForm);
 
 router.post('/agregar', controller.store);
 
+router.post('/:id/comentario', controller.storeComentario);
+
 router.get("/actualizar/:id", controller.showFormupdate);
 
 router.post("/actualizar/:id", controller.update);

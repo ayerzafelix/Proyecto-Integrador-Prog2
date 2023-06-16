@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const productos = db.Producto; // Alias del modelo
+const comentarios = db.Comentario
 let op = db.Sequelize.Op
 
 const controller = {
@@ -97,7 +98,13 @@ const controller = {
         let info = req.body;
         info['usuarioId'] = req.session.user.id
         productos.create(info)
+        .then(function(result){
             return res.redirect('/') 
+        })
+        .catch(function(err){
+            console.log(err)
+        });
+            
         
     },
 
@@ -138,7 +145,24 @@ const controller = {
         }).catch((err) => {
             console.log(err)
         });
-    }
+    },
+
+    storeComentario: (req,res) => {
+        if (req.session.user != undefined){
+            let info = req.body;
+            let productId = req.params.id
+            info['usuarioId'] = req.session.user.id
+            info['productoId'] = productId
+            comentarios.create(info)
+            .then((result) => {
+                return res.redirect('/productos/detail/' + productId) 
+            }).catch((err) => {
+                console.log(err)
+            });
+        } else {
+            return res.redirect('/users/login') 
+        }
+    },
 
 }
 
