@@ -178,7 +178,41 @@ const bcrypt = require('bcryptjs');
             
 
         });
-    }
+    },
+    resultadoUsuario: (req, res) => {
+        let busqueda = req.query.search;
+
+        let rel = {
+            include: {
+                all:true,
+                nested: true
+            }
+        } 
+
+        usuarios.findAll({
+            include: {
+                all:true,
+                nested: true
+            },
+            where: {
+                [op.like]: [
+                    {nombreUsuario: {[op.like]: `%${busqueda}%`}},
+                ]
+            },
+            order: [
+                ['createdAt', 'DESC'],
+            ]
+        })
+        .then(function(result){
+            return res.render('busqueda', {
+                listaUsuarios: result
+            })
+        })
+        .catch(function(err){
+            console.log(err)
+        });
+    },
+    
 
 }
 

@@ -19,6 +19,8 @@ router.post('/register', controller.store)
 router.get('/login', controller.login );
 router.post('/login', controller.loginPost)
 
+router.get('/busqueda', controller.resultadoUsuario ); //findAll
+
 module.exports = router;
 
 
