@@ -55,10 +55,16 @@
 
                     
                 </section>
+                <% if (locals.user != undefined) { %>
                 <form class="form" action="/productos/<%= producto.id%>/comentario" method="post">
                     <input class="form-input" type="text" value="" name="comentario" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                 </form>
+                <% } else { %>
+                    <p>Primero tienes que iniciar sesion</p>
+                    <a href="/users/login">Iniciar sesion</a>
+                    <a href="/users/register">Registrarse</a>
+                    <% } %>
             </div>
         </div>
     </div>
