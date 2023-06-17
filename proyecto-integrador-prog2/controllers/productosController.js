@@ -1,6 +1,7 @@
 const db = require('../database/models')
 const productos = db.Producto; // Alias del modelo
 const comentarios = db.Comentario
+const usuarios = db.Usuario; //el alias de usuario.js
 let op = db.Sequelize.Op
 
 const controller = {
@@ -76,14 +77,19 @@ const controller = {
             ]
         })
         .then(function(result){
-            return res.render('busqueda', {
-                listaProductos: result
+            usuarios.findAll({
+                where: {nombreUsuario: {[op.like]: `%${busqueda}%`},}
+            })
+            .then(function(resultUsuario){
+                return res.render('busqueda', {listaProductos: result, listaUsuarios: resultUsuario})}
+            ).catch(function(err){
+                console.log(err)
             })
         })
         .catch(function(err){
             console.log(err)
-        });
-    },
+        })
+},
 
 
     showForm: (req,res) => {

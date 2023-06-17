@@ -32,22 +32,7 @@ let op = db.Sequelize.Op
                 res.locals.errors = errors;
                 return res.render('register')
             }
-            // else if(req.body.fotoPerfil == '') {
-            //     errors.message = 'La foto no debe estar vacia';
-            //     res.locals.errors = errors;
-            //     return res.render('register')
-            // } else if(req.body.nombreUsuario == '') {
-            //     errors.message = 'El usuario no debe estar vacio';
-            //     res.locals.errors = errors;
-            //     return res.render('register')
-            // } else if(req.body.fecha == '') {
-            //     errors.message = 'La fecha no debe estar vacia';
-            //     res.locals.errors = errors;
-            //     return res.render('register')
-            // } else if(req.body.DNI == '') {
-            //     errors.message = 'El DNI no debe estar vacio';
-            //     res.locals.errors = errors;
-            //     return res.render('register')
+
              else {
                 let info = req.body;
     
@@ -177,38 +162,6 @@ let op = db.Sequelize.Op
             users: data.users,
             
 
-        });
-    },
-    resultadoUsuario: (req, res) => {
-        let busqueda = req.query.search;
-
-        //let rel = {
-        //    include: {
-        //        all:true,
-         //       nested: true
-        //    }
-        //} 
-
-        usuarios.findAll({
-            include: {
-                all:true,
-                nested: true
-            },
-            where: {
-                [op.or]: [
-                    {nombreUsuario: {[op.like]: `%${busqueda}%`}},
-                    {mail: {[op.like]: `%${busqueda}%`}},
-                ]
-            },
-            order: [
-                ['createdAt', 'DESC'],
-            ]
-        })
-        .then(function(result){
-            return res.render('busquedaUsuario', { listaUsuarios: result });   
-        })
-        .catch(function(err){
-            console.log(err)
         });
     },
     

@@ -12,7 +12,7 @@
 
   <main>
     <section class="section-detalle-busqueda flex-box-c">
-      <% if (listaProductos.length > 0) { %>
+      <% if (listaProductos.length > 0 || listaUsuarios.length > 0) { %>
       <h2>Resultado de Busqueda:</h2>
 
       <section class="section-playlist">
@@ -40,6 +40,11 @@
               </section>
             </div>
       
+          <% } %>
+          <% for(let i= 0; i<listaUsuarios.length; i++){ %>
+            <p class="">
+              <strong><a href="/users/profile/<%= listaUsuarios[i].id %>"><%=listaUsuarios[i].nombreUsuario%></a></strong>
+            </p>
           <% } %>
         <% } else {%>
           <h2>No hay resultados para su criterio de búsqueda</h2>
